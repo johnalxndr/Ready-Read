@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="" ng-app="readyRead">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +10,9 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/paper/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />-->
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -20,42 +23,51 @@
     <!-- build:js scripts/vendor/modernizr.js -->
 
     <!-- endbuild -->
-  </head>
-  <body ng-controller="LoginController as login">
+</head>
+
+<body ng-controller="LoginController as login">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-      <div class="row">
-<div class=container-fluid>
-  <h1 class="text-center">ReadyRead</h1>
- <form id="auth" class="col-sm-4 col-sm-offset-4 text-center">
-     <div class="form-group">
-       <input type="email" class="form-control text-center" ng-model="login.newData.email" placeholder="insert email"/>
-     </div>
-     <div class="form-group">
-       <input type="password" class="form-control text-center" ng-model="login.newData.password" placeholder="password"/>
-     </div>
-     <div class="form-group">
-       <input type="password" class="form-control text-center" ng-model="login.newData.passCheck" placeholder="re-enter password"/>
-     </div>
-     <button type="submit" class="btn btn-default" ng-click="login.addUser()">Sign In / Sign Up
-     </button>
-  </form>
-
-  </div>
-  </div>
-  </div>
+    <div class="row">
+        <div class=container-fluid>
+            <h1 class="text-center">ReadyRead</h1>
+            <form id="auth" class="col-sm-4 col-sm-offset-4 text-center">
+                <div class="form-group">
+                    <input type="email" class="form-control text-center" ng-model="login.newData.email" placeholder="insert email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control text-center" ng-model="login.newData.password" placeholder="password" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control text-center" ng-model="login.newData.passCheck" placeholder="re-enter password" />
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="login.addUser()">Sign In / Sign Up
+                </button>
+                <button type="submit" class="btn btn-info">Take A Tour
+                </button>
+            </form>
+        </div>
+    </div>
 
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -72,12 +84,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js scripts/plugins.js -->
+    <!-- build:js scripts/plugins.js -->
 
-        <!-- endbuild -->
+    <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
