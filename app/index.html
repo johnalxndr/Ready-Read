@@ -42,11 +42,18 @@
      </button>
   </form>
 
+
+
   </div>
   </div>
   </div>
 
-
+  <h1>Log In</h1>
+  <form>
+    <input ng-model="login.userLogin.email" type="email">
+    <input ng-model="login.userLogin.password" type="password">
+    <button type="submit" ng-click="login.logUserIn()">Login</button>
+    </form>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
