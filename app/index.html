@@ -38,8 +38,7 @@
      <div class="form-group">
        <input type="password" class="form-control text-center" ng-model="login.newData.passCheck" placeholder="re-enter password"/>
      </div>
-     <button type="submit" class="btn btn-default" ng-click="login.addUser()">Sign In / Sign Up
-     </button>
+     <button type="submit" class="btn btn-default" ng-click="login.addUser()">Sign Up</button>
   </form>
 
 
@@ -50,10 +49,12 @@
 
   <h1>Log In</h1>
   <form>
-    <input ng-model="login.userLogin.email" type="email">
-    <input ng-model="login.userLogin.password" type="password">
+    Email Address: <input ng-model="login.userLogin.email" type="email">
+    Password: <input ng-model="login.userLogin.password" type="password">
     <button type="submit" ng-click="login.logUserIn()">Login</button>
     </form>
+    <button ng-click="login.logOut()">LogOut</button>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

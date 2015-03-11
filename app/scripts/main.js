@@ -3,7 +3,9 @@ var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular'])
 
 readyRead.controller('LoginController', function(){
   var base = new Firebase('https://readyread.firebaseio.com/')
-
+  var userArticle = new Firebase('https://readyread.firebaseio.com/articles')
+  var auth = base.getAuth()
+  console.log(auth)
   this.addUser = function(){
     var users = [ ];
     users.push(this.newData);
@@ -37,5 +39,8 @@ readyRead.controller('LoginController', function(){
   }
 })
 this.userLogin = ''
+}
+this.logOut = function() {
+base.unauth()
 }
 })
