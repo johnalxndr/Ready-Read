@@ -1,11 +1,7 @@
 <ul>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
-  <li>Goodbye</li>
+  <li ng-repeat="article in feed.articles">
+  <h4>{{article.title.text}}</h4>
+  <p>{{article.description.text}}</p>
+  <a href="{{article.title.href}}">Check out Full Article Here!</a>
+  </li>
 </ul>
