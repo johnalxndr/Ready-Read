@@ -2,11 +2,11 @@
 var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular','firebase', 'ui.router'])
 
 
-readyRead.controller('LoginController', function(){
-  var base = new Firebase('https://readyread.firebaseio.com/')
-  var userArticle = new Firebase('https://readyread.firebaseio.com/articles')
-  var auth = base.getAuth()
-  console.log(auth)
+readyRead.controller('LoginController', function () {
+    var base = new Firebase('https://readyread.firebaseio.com/')
+    var userArticle = new Firebase('https://readyread.firebaseio.com/articles')
+    var auth = base.getAuth()
+    console.log(auth)
   this.display = base.onAuth(function(authData) {
     if (authData) {
       // save the user's profile into Firebase so we can list users,
@@ -31,6 +31,7 @@ readyRead.controller('LoginController', function(){
     base.unauth(function(){
       $('.userDisplay').html('')
     })
+    }
   }
   this.hello = function (){
     base.onAuth(function(authData){
