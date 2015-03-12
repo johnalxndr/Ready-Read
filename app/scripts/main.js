@@ -32,7 +32,6 @@ readyRead.controller('LoginController', function () {
       $('.userDisplay').html('')
     })
     }
-  }
   this.hello = function (){
     base.onAuth(function(authData){
       if(authData){
