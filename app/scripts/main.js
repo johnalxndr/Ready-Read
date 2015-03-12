@@ -1,46 +1,61 @@
 'use strict';
-var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular'])
+var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular','firebase', 'ui.router'])
+
 
 readyRead.controller('LoginController', function(){
   var base = new Firebase('https://readyread.firebaseio.com/')
   var userArticle = new Firebase('https://readyread.firebaseio.com/articles')
   var auth = base.getAuth()
   console.log(auth)
-  this.addUser = function(){
-    var users = [ ];
-    users.push(this.newData);
-    this.newData = ''
-      //Checks to see if both password fields match
-      if(users[0].password != users[0].passCheck){
-        alert('Do You Even Type Bro? Match the passwords')
-      }else{
-        //creates a new user
-        base.createUser({
-            email    : users[0].email,
-            password : users[0].password
-        },function(error, userData) {
-          if (error) {
-            console.log("Error creating user:", error);
-          } else {
-            console.log("Successfully created user account with uid:", userData.uid);
-          }
-        });
+  this.display = base.onAuth(function(authData) {
+    if (authData) {
+      // save the user's profile into Firebase so we can list users,
+      // use them in Security and Firebase Rules, and show profiles
+      base.child("users").child(authData.uid).set({
+        provider: authData.provider,
+        name: authData.twitter.displayName
+      });
+      $('.userDisplay').html('Hello ' + authData.twitter.displayName)
     }
-  }
+  });
   this.logUserIn = function () {
-    base.authWithPassword({
-      email    : this.userLogin.email,
-      password : this.userLogin.password
-    }, function(error, authData) {
-        if (error) {
-        alert("Login Failed!", error.code);
-    } else {
+    base.authWithOAuthPopup("twitter", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
     console.log("Authenticated successfully with payload:", authData);
   }
+});
+}
+  this.logOut = function() {
+    base.unauth(function(){
+      $('.userDisplay').html('')
+    })
+  }
+  this.hello = function (){
+    base.onAuth(function(authData){
+      if(authData){
+        console.log('ello ello')
+      }else{
+        console.log('log in to use this feature')
+      }
+    })
+  }
+  this.addCustomArticle = function(){
+    var add = {
+      name: this.newArticle.name,
+      url: this.newArticle.name
+    }
+    base.onAuth(function(authData){
+      if(authData){
+        base.child('articles').child(authData.uid).push(add)
+        console.log('added to your list of added articles')
+      }else{
+        console.log('please log in to use this feature')
+      }
+    })
+  }
 })
-this.userLogin = ''
-}
-this.logOut = function() {
-base.unauth()
-}
+readyRead.controller('FeedController', function(){
+  console.log('Feed Controller')
 })
