@@ -34,6 +34,12 @@
     <button type="submit" ng-click="login.logUserIn()">Login</button>
 
     <button ng-click="login.logOut()">LogOut</button>
+    <button ng-click="login.hello()">Ello Ello</button>
+    <form>
+      Name for your Article:<input type="text" ng-model="login.newArticle.name" />
+      Url For Your Article:<input type="text" ng-model="login.newArticle.url" />
+      <button type="submit" ng-click="login.addCustomArticle()">Add Your Own Article</button>
+    <form>
 </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
