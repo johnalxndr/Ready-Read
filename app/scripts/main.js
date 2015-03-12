@@ -1,5 +1,6 @@
 'use strict';
-var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular','firebase'])
+var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular','firebase', 'ui.router'])
+
 
 readyRead.controller('LoginController', function(){
   var base = new Firebase('https://readyread.firebaseio.com/')
@@ -54,4 +55,7 @@ readyRead.controller('LoginController', function(){
       }
     })
   }
+})
+readyRead.controller('FeedController', function(){
+  console.log('Feed Controller')
 })
