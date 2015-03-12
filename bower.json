@@ -9,6 +9,7 @@
     "restangular": "~1.4.0",
     "firebase": "~2.2.2",
     "angularfire": "~1.0.0",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "angular-ui-router": "~0.2.13"
   }
 }
