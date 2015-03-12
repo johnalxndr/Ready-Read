@@ -29,6 +29,7 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="row">
         <div class=container-fluid>
             <h1 class="text-center">ReadyRead</h1>
@@ -50,6 +51,14 @@
         </div>
     </div>
 
+    <h1>Log In</h1>
+    <form>
+        Email Address:
+        <input ng-model="login.userLogin.email" type="email"> Password:
+        <input ng-model="login.userLogin.password" type="password">
+        <button type="submit" ng-click="login.logUserIn()">Login</button>
+    </form>
+    <button ng-click="login.logOut()">LogOut</button>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
