@@ -10,9 +10,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/paper/bootstrap.min.css">
-    <!--    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />-->
-
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -35,10 +33,6 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-                </button>
-                <button type="submit" class="btn btn-info">Take A Tour
-                </button>
-        <input ng-model="login.userLogin.password" type="password">
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -60,7 +54,9 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
@@ -78,7 +74,7 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
-        <script src="scripts/uiroute.js"></script>
+    <script src="scripts/uiroute.js"></script>
     <!-- endbuild -->
 </body>
 
