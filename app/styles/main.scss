@@ -20,7 +20,12 @@ body {}
 
 h1 {
     color: $green;
-    @extend .col-sm-6;
+}
+
+#loginForm {
+    button {
+        @extend .col-sm-12;
+    }
 }
 
 .feed {

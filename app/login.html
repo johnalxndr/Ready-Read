@@ -1,11 +1,13 @@
 <div class="container-fluid">
-    <div id="loginForm">
+    <div class="well well-large" id="loginForm">
         <h1 class="text-center ">ReadyRead</h1>
+        <h6 class="text-center">The Only RSS Reader That Has Time For You</h6>
         <h6 class="userDisplay"></h6>
 
-        <button type="submit" ng-click="login.logUserIn()">Login</button>
+        <button type="submit" class="btn btn-info" ng-click="login.logUserIn()">Login</button>
+        <button type="submit" class="btn btn-danger" ng-click="login.logOut()">LogOut</button>
+        <a type="button" class="btn btn-success login-tour" ui-sref="feed">Take A Tour</a>
 
-        <button ng-click="login.logOut()">LogOut</button>
 
     </div>
     <!----LoginForm----->
