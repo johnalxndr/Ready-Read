@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ready Read</title>
+    <title>ReadyRead</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!--    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />-->
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -24,12 +24,19 @@
 </head>
 
 <body>
-    <header>
-        <a ui-sref="feed">Browse Feed</a>
-        <a ui-sref="login">Back to Login</a>
-    </header>
+    <div class="container-fluid">
+        <div class="login-menu">
+            <div ui-view></div>
+            <a type="button" class="btn btn-success login-tour" ui-sref="feed">Take A Tour</a>
+            <a class ui-sref="login">Login Menu</a>
+        </div>
 
-    <div ui-view></div>
+
+
+
+
+
+    </div>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
