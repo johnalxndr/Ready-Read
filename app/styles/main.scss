@@ -1,0 +1,37 @@
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+//Primary Colors
+$green: #1ABC9C;
+$grey: #34495E;
+$body-bg: #c1bdba;
+$form-bg: #13232f;
+$white: #ffffff;
+$main: #1ab188;
+$main-light: lighten($main,
+5%);
+$main-dark: darken($main,
+5%);
+$gray-light: #a0b3b0;
+$gray: #ddd;
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+body {}
+
+h1 {
+    color: $green;
+}
+
+.feed {
+    li {
+        text-decoration: none;
+    }
+}
+
+.login-menu {
+    .login-tour {
+        background-color: $green;
+        color: #2C3E50;
+        border: none;
+    }
+}
