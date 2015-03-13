@@ -5,14 +5,12 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ready Read</title>
+    <title>ReadyRead</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/paper/bootstrap.min.css">
     <!--    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />-->
-
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -25,31 +23,23 @@
     <!-- endbuild -->
 </head>
 
-<body ng-controller="LoginController as login">
+<body>
+    <div class="container-fluid">
+        <div class="login-menu">
+            <div ui-view></div>
+            <a type="button" class="btn btn-success login-tour" ui-sref="feed">Take A Tour</a>
+            <a class ui-sref="login">Login Menu</a>
+        </div>
+
+
+
+
+
+
+    </div>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="row">
-        <div class=container-fluid>
-            <h1 class="text-center">ReadyRead</h1>
-            <form id="auth" class="col-sm-4 col-sm-offset-4 text-center">
-                <div class="form-group">
-                    <input type="email" class="form-control text-center" ng-model="login.newData.email" placeholder="insert email" />
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control text-center" ng-model="login.newData.password" placeholder="password" />
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control text-center" ng-model="login.newData.passCheck" placeholder="re-enter password" />
-                </div>
-                <button type="submit" class="btn btn-default" ng-click="login.addUser()">Sign In / Sign Up
-                </button>
-                <button type="submit" class="btn btn-info">Take A Tour
-                </button>
-            </form>
-        </div>
-    </div>
-
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -81,6 +71,7 @@
     <script src="/bower_components/firebase/firebase.js"></script>
     <script src="/bower_components/angularfire/dist/angularfire.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -90,6 +81,8 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/uiroute.js"></script>
+    <script src="scripts/apifactory.js"></script>
     <!-- endbuild -->
 </body>
 
