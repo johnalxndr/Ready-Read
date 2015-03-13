@@ -1,4 +1,4 @@
-readyRead.factory('api',function(Restangular){
+readyRead.factory('api', function (Restangular) {
     Restangular.setJsonp(true)
-    return  Restangular.one('ehi2pmlg').get()
+    return Restangular.one('d8yv7o0i').get()
 })
