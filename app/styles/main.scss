@@ -24,6 +24,7 @@ h1 {
 
 #loginForm {
     .button-container {
+        margin-top: 3em;
         text-align: center;
     }
 }
@@ -34,10 +35,9 @@ h1 {
     }
 }
 
-.login-menu {
-    .login-tour {
-        background-color: $green;
-        color: #2C3E50;
-        border: none;
+.well {
+    background-color: $grey;
+    .tag-line {
+        color: $body-bg;
     }
 }
