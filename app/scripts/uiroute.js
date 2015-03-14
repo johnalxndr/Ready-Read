@@ -14,6 +14,21 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
         .state('feed.techCrunch', {
             url: '/techCrunch',
             templateUrl: './feed.techCrunch.html',
-            controller: 'TechController as feed'
+            controller: 'FeedController as feed'
+        })
+        .state('feed.read', {
+            url: '/read',
+            templateUrl: './feed.read.html',
+            controller: 'FeedController as feed'
+        })
+        .state('feed.title', {
+            url: '/title',
+            templateUrl: './feed.title.html',
+            controller: 'FeedController as feed'
+        })
+        .state('feed.category', {
+            url: '/category',
+            templateUrl: './feed.category.html',
+            controller: 'FeedController as feed'
         })
 })

@@ -1,16 +1,27 @@
 <div class="container-fluid">
-    <h1 class="text-center ">ReadyRead</h1>
-    <h3 class="userDisplay"></h3>
+    <div class="well well-large" id="loginForm">
+        <h1 class="text-center ">ReadyRead</h1>
+        <h6 class="text-center">The Only RSS Reader That Has Time For You</h6>
+        <h6 class="userDisplay"></h6>
 
+        <button type="submit" class="btn btn-info" ng-click="login.logUserIn()">Login</button>
+        <button type="submit" class="btn btn-danger" ng-click="login.logOut()">LogOut</button>
+        <button class="btn btn-success><a  login-tour" ui-sref="feed">Take A Tour
+        </button>
 
-    <button type="submit" ng-click="login.logUserIn()">Login</button>
-
-    <button ng-click="login.logOut()">LogOut</button>
-    <button ng-click="login.hello()">Ello Ello</button>
-    <!--
-
-            <input type="text" ng-model="login.newArticle.name" /> Url For Your Article:
-            <input type="text" ng-model="login.newArticle.url" />
-            <button type="submit" ng-click="login.addCustomArticle()">Add Your Own Article</button>
--->
+    </div>
+    <!----LoginForm----->
 </div>
+<!----Container---->
+
+
+
+
+
+<!--
+ <button type="submit" ng-click="login.addCustomArticle()">Add Your Own Article</button>
+-->
+
+<!--
+<input type="text" ng-model="login.newArticle.name" /> Url For Your Article:
+            <input type="text" ng-model="login.newArticle.url" />-->

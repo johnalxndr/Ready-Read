@@ -1,4 +1,5 @@
 'use strict';
+
 var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular', 'firebase', 'ui.router'])
 readyRead.config(function (RestangularProvider) {
     RestangularProvider.setBaseUrl('https://www.kimonolabs.com/api/')
@@ -63,6 +64,7 @@ readyRead.controller('LoginController', function () {
             }
         })
     }
+
 })
 readyRead.controller('FeedController', function (api) {
     var self = this;

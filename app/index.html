@@ -27,15 +27,11 @@
     <div class="container-fluid">
         <div class="login-menu">
             <div ui-view></div>
-            <a type="button" class="btn btn-success login-tour" ui-sref="feed">Take A Tour</a>
             <a class ui-sref="login">Login Menu</a>
+            <a class ui-sref="feed.category">CATEGORY</a>
+            <a class ui-sref="feed.title">TITLES</a>
+            <a class ui-sref="feed.read">READER</a>
         </div>
-
-
-
-
-
-
     </div>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -83,6 +79,7 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/uiroute.js"></script>
     <script src="scripts/apifactory.js"></script>
+    <script src="scripts/authfactory.js"></script>
     <!-- endbuild -->
 </body>
 
