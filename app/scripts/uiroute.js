@@ -1,4 +1,4 @@
-readyRead.config(function ($stateProvider, $urlRouterProvider) {
+readyRead.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise("/login");
     $stateProvider
         .state('login', {
@@ -31,4 +31,8 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: './userProfile.html',
             controller: 'UserProfileController as user'
         })
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> e973cdc327cee8d62617171ec81c5de04f246cc0
