@@ -1,0 +1,7 @@
+<h1><img ng-src="{{user.avatar}}" style="border-radius: 50%"/>Hello {{user.name}}</h1>
+<h5>Your Saved Articles:</h5>
+<ul ng-repeat="saved in user.list">
+  <li>
+    <span>{{saved.$value}}</span>
+  </li>
+</ul>

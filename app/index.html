@@ -26,10 +26,11 @@
 <body>
     <div class="container-fluid">
         <div class="login-menu">
-            <div ui-view></div>
             <a type="button" class="btn btn-success login-tour" ui-sref="feed">Take A Tour</a>
             <a class ui-sref="login">Login Menu</a>
+            <a ui-sref="userProfile">Profile</a>
         </div>
+        <div ui-view></div>
 
 
 
@@ -83,7 +84,7 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/uiroute.js"></script>
     <script src="scripts/apifactory.js"></script>
-    <script src="scripts/authfactory.js"></script>
+    <script src="scripts/angularfactory.js"></script>
     <!-- endbuild -->
 </body>
 
