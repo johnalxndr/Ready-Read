@@ -1,7 +1,9 @@
 <ul>
   <li ng-repeat="article in feed.articles">
-  <h4>{{article.title.text}}</h4>
-  <p>{{article.description.text}}</p>
+  <h4>{{article.title}}</h4>
+  <p>{{article.text.text}}</p>
   <a href="{{article.title.href}}">Check out Full Article Here!</a>
+  <form>
+  <button type="button" class="btn btn-danger" ng-click="feed.save(article.title)">Save Article For Later</button>
   </li>
 </ul>
