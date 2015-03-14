@@ -31,6 +31,7 @@ readyRead.factory('angularAuth', function($firebaseArray,$firebaseAuth,$firebase
     }),
     saveArticle: function(saved){
       var userArticles = $firebaseArray(base.child('articles').child(authenticated.uid))
+      var newDate = Date.now()
       if(authenticated){
         userArticles.$add(saved).then(function(base){
           console.log(saved)
