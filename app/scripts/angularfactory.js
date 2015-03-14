@@ -10,7 +10,7 @@ readyRead.factory('angularAuth', function($firebaseArray,$firebaseAuth,$firebase
     getAuth: authenticated,
     logIn: function(){
       authObj.$authWithOAuthPopup("twitter").then(function(authData) {
-        $state.go('feed')
+        $state.go('feed.category')
       console.log("Logged in as:", authData.uid);
     }).catch(function(error) {
       console.error("Authentication failed:", error);

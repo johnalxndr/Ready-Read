@@ -1,4 +1,4 @@
-readyRead.config(function ($stateProvider, $urlRouterProvider) {
+readyRead.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise("/login");
     $stateProvider
         .state('login', {
@@ -11,11 +11,6 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: './feed.html',
             controller: 'FeedController as feed'
         })
-        .state('feed.techCrunch', {
-            url: '/techCrunch',
-            templateUrl: './feed.techCrunch.html',
-            controller: 'FeedController as feed'
-        })
         .state('feed.read', {
             url: '/read',
             templateUrl: './feed.read.html',
@@ -25,6 +20,7 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             url: '/title',
             templateUrl: './feed.title.html',
             controller: 'FeedController as feed'
+        })
         .state('feed.category', {
             url: '/category',
             templateUrl: './feed.category.html',
@@ -35,4 +31,4 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
           templateUrl: './userProfile.html',
           controller: 'UserProfileController as user'
         })
-      })
+})
