@@ -1,4 +1,5 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 //Primary Colors
 $green: #1ABC9C;
 $grey: #34495E;
@@ -37,6 +38,7 @@ h1 {
     }
     a {
         text-decoration: none;
+        margin-bottom: 1em;
     }
 }
 
