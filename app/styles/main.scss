@@ -22,22 +22,27 @@ h1 {
     color: $green;
 }
 
+//-----LOGIN PAGE----------
+.well {
+    background-color: $grey;
+    .tag-line {
+        color: $body-bg;
+    }
+}
+
 #loginForm {
     .button-container {
         margin-top: 3em;
         text-align: center;
     }
-}
-
-.feed {
-    li {
+    a {
         text-decoration: none;
     }
 }
 
-.well {
-    background-color: $grey;
-    .tag-line {
-        color: $body-bg;
+//---------------------------
+.feed {
+    li {
+        text-decoration: none;
     }
 }

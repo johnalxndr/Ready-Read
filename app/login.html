@@ -3,13 +3,13 @@
         <h1 class="text-center ">ReadyRead</h1>
         <h6 class="tag-line text-center">The Only RSS Reader That Has Time For You</h6>
         <h6 class="userDisplay"></h6>
-        <div class="button-container">
-            <button type="submit" class="btn btn-info" ng-click="login.login()">Login</button>
-            <button type="submit" class="btn btn-danger" ng-click="login.logout()">LogOut</button>
-            <a class="login-tour" ui-sref="feed.category">
-                <button class="btn btn-success">Take A Tour</button>
+        <div class="button-container btn-group-verticle">
+            <a type="submit" class="btn btn-block btn-social btn-twitter" ng-click="login.login()">
+                <i class="fa fa-twitter"></i> Sign in with Twitter
             </a>
-
+            <a class="login-tour" ui-sref="feed.category">
+                <button class="btn btn-block btn-success">Take A Tour</button>
+            </a>
         </div>
     </div>
 </div>
