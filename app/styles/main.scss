@@ -48,3 +48,32 @@ h1 {
         text-decoration: none;
     }
 }
+
+.nav-social {
+    float: right;
+    color: $green;
+    font-size: 1.3em;
+    img {
+        border-radius: 50%;
+        margin-left: .5em;
+    }
+}
+
+.userProfile {
+    text-align: center;
+    h2 {
+        @extend .col-xs-12;
+    }
+    button {
+        @extend .btn;
+        @extend .btn-default;
+    }
+}
+
+.saved-list {
+    @extend .list-group;
+    margin-top: 3em;
+    li {
+        @extend .list-group-item;
+    }
+}
