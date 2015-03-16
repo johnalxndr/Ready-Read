@@ -11,30 +11,54 @@ readyRead.controller('LoginController', function (angularAuth) {
   this.login = angularAuth.logIn
   this.auth = angularAuth.getAuth
   this.logout = angularAuth.logout
-  console.log(this.auth)
+  if(this.auth){
+    console.log('have auth')
+  }else{
+    console.log('no auth')
+  }
 })
-readyRead.controller('FeedController', function(api,angularAuth){
+readyRead.controller('FeedController', function(api,angularAuth,$firebaseObject){
   var self = this;
   api.then(function(data){
     self.articles=data.results.collection1
-    console.log(self.articles)
     self.save = angularAuth.saveArticle
   })
+  this.wordCount = function(text){
+    var s = text ? text.split(/\s+/) : 0;
+    return Math.round(s ? s.length/190 : '');
+  };
+  this.markedAsRead = function(words){
+    var userBase = $firebaseObject(new Firebase('https://readyread.firebaseio.com/users/'+angularAuth.getAuth.uid))
+    var users = new Firebase('https://readyread.firebaseio.com/users/'+angularAuth.getAuth.uid)
+    userBase.$loaded().then(function(data){
+      self.count = data.wordsRead
+      users.update({
+        wordsRead: self.count+words
+      })
+    })
+  }
 })
 readyRead.controller('UserProfileController', function(angularAuth,$firebaseObject,$firebaseArray){
   this.auth = angularAuth.getAuth
   var self = this;
+  var base = new Firebase('https://readyread.firebaseio.com/users/'+this.auth.uid)
   var userBase = $firebaseObject(new Firebase('https://readyread.firebaseio.com/users/'+this.auth.uid))
   var userHistory = $firebaseArray(new Firebase('https://readyread.firebaseio.com/articles/'+this.auth.uid))
   userBase.$loaded()
   .then(function(data) {
-    self.name = data.name
+    self.displayName = data.displayName
     self.avatar = data.picture
-    console.log(self.avatar)
+    self.wordCount = data.wordsRead
   });
   userHistory.$loaded()
   .then(function(data){
     self.list = data
-    console.log(self.list)
   })
+  this.profileUpdate = function(){
+    base.update({
+      nickname: this.newData.nickname,
+      file: this.newData.file,
+      description: this.newData.description
+    })
+  }
 })

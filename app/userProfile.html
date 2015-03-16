@@ -1,7 +1,8 @@
-<h1><img ng-src="{{user.avatar}}" style="border-radius: 50%"/>Hello {{user.name}}</h1>
-<h5>Your Saved Articles:</h5>
-<ul ng-repeat="saved in user.list">
-  <li>
-    <span>{{saved.$value}}</span>
-  </li>
-</ul>
+<div class="container userProfile">
+<h2>Welcome Back {{user.displayName}}</h2>
+<div class="btn-group">
+  <button type="button" ui-sref="userProfile.saved">Your Saved Articles</button>
+  <button type="button" ui-sref="userProfile.tracker">Your ReadyRead tracker</button>
+  <button type="button" ui-sref="userProfile.information">Your Information</button>
+</div>
+<div ui-view></div>

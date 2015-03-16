@@ -31,4 +31,19 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: './userProfile.html',
             controller: 'UserProfileController as user'
         })
+        .state('userProfile.saved',{
+          url: '/userProfileSaved',
+          templateUrl: './userProfile.saved.html',
+          controller: 'UserProfileController as user'
+        })
+        .state('userProfile.tracker',{
+          url: '/userProfileTracker',
+          templateUrl: './userProfile.tracker.html',
+          controller: 'UserProfileController as user'
+        })
+        .state('userProfile.information',{
+          url: '/userProfileInformation',
+          templateUrl: './userProfile.information.html',
+          controller: 'UserProfileController as user'
+        })
 })

@@ -16,6 +16,7 @@ $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
+
 body {}
 
 h1 {
@@ -27,7 +28,6 @@ h1 {
         margin-top: 6em;
     }
 }
-
 .feed {
     li {
         text-decoration: none;
@@ -35,9 +35,37 @@ h1 {
 }
 
 .login-menu {
+  margin-bottom: 2em;
     .login-tour {
         background-color: $green;
         color: #2C3E50;
         border: none;
     }
+}
+.nav-social{
+  float: right;
+  color: $green;
+  font-size: 1.3em;
+  img{
+    border-radius: 50%;
+    margin-left: .5em;
+  }
+}
+
+.userProfile{
+  text-align:center;
+  h2{
+    @extend .col-xs-12;
+  }
+  button{
+    @extend .btn;
+    @extend .btn-default;
+  }
+}
+.saved-list{
+  @extend .list-group;
+  margin-top: 3em;
+  li{
+    @extend .list-group-item;
+  }
 }
