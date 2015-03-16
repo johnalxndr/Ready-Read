@@ -1,0 +1,17 @@
+<h4>User Information</h4>
+<p>Your Information:</p>
+<form class="col-md-6" ng-submit="user.profileUpdate()">
+  <div class="form-group">
+    <label>Your ReadyRead Nickname</label>
+    <input type="text" class="form-control" placeholder="{{user.displayName}}" ng-model="newData.nickname">
+  </div>
+  <div class="form-group">
+    <label>Your Ready Read Goals</label>
+    <input type="text" class="form-control" placeholder="how about some self-motivation...." ng-model="newData.description">
+  </div>
+  <div class="form-group">
+    <label>Picture</label>
+    <input type="file" ng-model="newData.file">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

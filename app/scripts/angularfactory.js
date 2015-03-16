@@ -4,12 +4,12 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
     var articles = $firebaseArray(base.child('articles'))
     var authObj = $firebaseAuth(base)
     var authenticated = authObj.$getAuth()
-
     return {
         getAuth: authenticated,
         logIn: function () {
             authObj.$authWithOAuthPopup("twitter").then(function (authData) {
                 $state.go('feed.category')
+                authenticated = authObj.$getAuth()
                 console.log("Logged in as:", authData.uid);
             }).catch(function (error) {
                 console.error("Authentication failed:", error);
@@ -26,11 +26,12 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
                     picture: authData.twitter.cachedUserProfile.profile_image_url,
                     isMember: true
                 })
+              $('.nav-social').prepend(authData.twitter.username)
+              $('.social-icon').attr('src', authData.twitter.cachedUserProfile.profile_image_url)
             }
         }),
         saveArticle: function (saved) {
             var userArticles = $firebaseArray(base.child('articles').child(authenticated.uid))
-            var newDate = Date.now()
             if (authenticated) {
                 userArticles.$add(saved).then(function (base) {
                     console.log(saved)
