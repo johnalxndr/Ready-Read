@@ -2,21 +2,25 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
     var base = new Firebase('https://readyread.firebaseio.com/')
     var users = $firebaseObject(base.child('users'))
     var articles = $firebaseArray(base.child('articles'))
-    var authObj = $firebaseAuth(base)
-    var authenticated = authObj.$getAuth()
+
     return {
-        getAuth: authenticated,
         logIn: function () {
-            authObj.$authWithOAuthPopup("twitter").then(function (authData) {
-                $state.go('feed.category')
-                authenticated = authObj.$getAuth()
-                console.log("Logged in as:", authData.uid);
-            }).catch(function (error) {
-                console.error("Authentication failed:", error);
-            })
+          base.authWithOAuthPopup("twitter", function(error, authData) {
+            if (error) {
+              console.log("Login Failed!", error);
+            } else {
+              $state.go('userProfile')
+              $('.nav-social').prepend(authData.twitter.username)
+              $('.social-icon').attr('src', authData.twitter.cachedUserProfile.profile_image_url)
+              console.log("Authenticated successfully with payload:", authData)
+              base.getAuth()
+            }
+          });
         },
         logout: function () {
-            authObj.$unauth()
+            base.unauth()
+            $('.nav-social').html('')
+            $state.go('login')
         },
         updateUser: base.onAuth(function (authData) {
             if (authData) {
@@ -26,13 +30,11 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
                     picture: authData.twitter.cachedUserProfile.profile_image_url,
                     isMember: true
                 })
-              $('.nav-social').prepend(authData.twitter.username)
-              $('.social-icon').attr('src', authData.twitter.cachedUserProfile.profile_image_url)
-            }
+              }
         }),
         saveArticle: function (saved) {
-            var userArticles = $firebaseArray(base.child('articles').child(authenticated.uid))
-            if (authenticated) {
+            var userArticles = $firebaseArray(base.child('articles').child(base.getAuth().uid))
+            if (base.getAuth().uid) {
                 userArticles.$add(saved).then(function (base) {
                     console.log(saved)
                 })

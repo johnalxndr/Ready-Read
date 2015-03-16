@@ -2,16 +2,9 @@
 <p>Your Information:</p>
 <form class="col-md-6" ng-submit="user.profileUpdate()">
   <div class="form-group">
-    <label>Your ReadyRead Nickname</label>
-    <input type="text" class="form-control" placeholder="{{user.displayName}}" ng-model="newData.nickname">
-  </div>
-  <div class="form-group">
-    <label>Your Ready Read Goals</label>
-    <input type="text" class="form-control" placeholder="how about some self-motivation...." ng-model="newData.description">
-  </div>
-  <div class="form-group">
-    <label>Picture</label>
-    <input type="file" ng-model="newData.file">
+    <label>Set Up Your ReadyRead goals</label>
+    <input type="text" class="form-control" placeholder="Your Goal for Minutes Spent Reading...." ng-model="user.newData.timeGoal">
+    <input type="text" class="form-control" placeholder="Any Other Goals" ng-model="user.newData.other">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
