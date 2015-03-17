@@ -1,10 +1,6 @@
 <h4>Your ReadyRead statistics</h4>
-
 <div class="well">
-  <p>Your current goal: {{user.time}} minutes</p>
-  <p>{{user.other}}</p>
-</div>
-<span>Your 'time' progress bar: {{user.progress}}/{{user.time}} minutes</span>
+  <p>Your current goal: {{user.timeCount}}/{{user.time}} minutes</p>
 <div class="progress">
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:{{user.progress}}%">
 </div>
@@ -13,4 +9,6 @@
 <div class="progress">
   <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width:{{user.wordTracker}}%">
   </div>
+</div>
+<span>{{user.other}}</span>
 </div>

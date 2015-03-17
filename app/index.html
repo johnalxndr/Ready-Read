@@ -23,14 +23,22 @@
     <!-- endbuild -->
 </head>
 
-<body>
+<body ng-controller="MainController as main">
     <div class="container-fluid">
         <div class="login-menu">
-            <a class ui-sref="login">Login Menu</a>
-            <a ui-sref="userProfile">Profile</a>
-            <a class ui-sref="feed.category">CATEGORY</a>
-            <a class ui-sref="feed.read">READER</a>
-            <span class="nav-social"><img class="social-icon" /></span>
+            <a class ui-sref="login">login</a>
+            <a class ui-sref="feed.category">feed</a>
+          </div>
+          <div class="dropdown" ng-show="main.authData">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              <i class="fa fa-bars"></i>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="userProfile"><i class="fa fa-user-secret"></i>  Profile</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="login" ng-click="main.logout()"><i class="fa fa-power-off"></i>  Logout</a></li>      
+            </ul>
+          </div>
         </div>
         <div ui-view></div>
 
@@ -85,8 +93,12 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/uiroute.js"></script>
-    <script src="scripts/apifactory.js"></script>
-    <script src="scripts/angularfactory.js"></script>
+    <script src="scripts/factories/apifactory.js"></script>
+    <script src="scripts/factories/angularfactory.js"></script>
+    <script src="scripts/controllers/feedController.js"></script>
+    <script src="scripts/controllers/profileController.js"></script>
+    <script src="scripts/controllers/mainController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
     <!-- endbuild -->
 </body>
 
