@@ -5,17 +5,15 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
 
     return {
         logIn: function () {
-          base.authWithOAuthPopup("twitter", function(error, authData) {
-            if (error) {
-              console.log("Login Failed!", error);
-            } else {
-              $state.go('userProfile')
-              $('.nav-social').prepend(authData.twitter.username)
-              $('.social-icon').attr('src', authData.twitter.cachedUserProfile.profile_image_url)
-              console.log("Authenticated successfully with payload:", authData)
-              base.getAuth()
-            }
-          });
+            base.authWithOAuthPopup("twitter", function (error, authData) {
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else {
+                    $state.go('userProfile')
+                    console.log("Authenticated successfully with payload:", authData)
+                    base.getAuth()
+                }
+            });
         },
         logout: function () {
             base.unauth()
@@ -30,7 +28,7 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
                     picture: authData.twitter.cachedUserProfile.profile_image_url,
                     isMember: true
                 })
-              }
+            }
         }),
         saveArticle: function (saved) {
             var userArticles = $firebaseArray(base.child('articles').child(base.getAuth().uid))
