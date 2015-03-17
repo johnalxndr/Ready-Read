@@ -52,11 +52,12 @@ h1 {
     }
     a:hover {
         color: #ffffff;
+        display: block;
     }
 }
 
 .cat-btn {
-    background-color: #ffffff;
+    background-color: #ECF0F1;
     display: inline-block;
     margin-bottom: 0em;
     text-align: center;
@@ -66,14 +67,14 @@ h1 {
     }
 }
 
-.categories {
+.cat-btn:hover {
+    background-color: $primary-green;
+}
+
+h3 {
     text-align: center;
     padding: 4em 1em;
     margin-top: -3em;
-}
-
-.cat-btn:hover {
-    background-color: $grey;
 }
 
 //---------Feed.title-------------
