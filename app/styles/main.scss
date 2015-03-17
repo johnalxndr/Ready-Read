@@ -19,8 +19,6 @@ $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
-body {}
-
 h1 {
     color: $green;
 }
@@ -49,27 +47,33 @@ h1 {
 //---------Feed.Category-----------
 .cat-container {
     a {
-        color: #ffffff;
+        text-align: center;
+        color: $primary-green;
     }
     a:hover {
-        color: $primary-green;
+        color: #ffffff;
     }
 }
 
 .cat-btn {
-    width: 25%;
-    background-color: $grey;
+    background-color: #ffffff;
     display: inline-block;
-    margin-bottom: 1em;
+    margin-bottom: 0em;
+    text-align: center;
+    i {
+        font-size: 3em;
+        margin-top: 3em;
+    }
 }
 
 .categories {
     text-align: center;
     padding: 4em 1em;
+    margin-top: -3em;
 }
 
 .cat-btn:hover {
-    background-color: $midnight-blue;
+    background-color: $grey;
 }
 
 //---------Feed.title-------------
