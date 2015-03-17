@@ -1,7 +1,10 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 //Primary Colors
+$primary-green:#16a085;
 $green: #1ABC9C;
 $grey: #34495E;
+$midnight-blue:#2C3E50;
 $body-bg: #c1bdba;
 $form-bg: #13232f;
 $white: #ffffff;
@@ -16,15 +19,71 @@ $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
-body {}
-
 h1 {
     color: $green;
 }
 
+//-----LOGIN PAGE----------
+.well {
+    background-color: $grey;
+    .tag-line {
+        color: $body-bg;
+    }
+}
+
 #loginForm {
+    .button-container {
+        margin-top: 3em;
+        text-align: center;
+    }
     button {
-        margin-top: 6em;
+        margin-top: 1em;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+//---------Feed.Category-----------
+.cat-container {
+    a {
+        text-align: center;
+        color: $primary-green;
+    }
+    a:hover {
+        color: #ffffff;
+        display: block;
+    }
+}
+
+.cat-btn {
+    background-color: #ECF0F1;
+    display: inline-block;
+    margin-bottom: 0em;
+    text-align: center;
+    i {
+        font-size: 3em;
+        margin-top: 3em;
+    }
+}
+
+.cat-btn:hover {
+    background-color: $primary-green;
+}
+
+h3 {
+    text-align: center;
+    padding: 4em 1em;
+    margin-top: -3em;
+}
+
+//---------Feed.title-------------
+.title-list {
+    text-decoration: none;
+    ul {
+        li {
+            list-style: none;
+        }
     }
 }
 
@@ -34,10 +93,44 @@ h1 {
     }
 }
 
-.login-menu {
-    .login-tour {
-        background-color: $green;
-        color: #2C3E50;
-        border: none;
+.nav-social {
+    float: right;
+    color: $green;
+    font-size: 1.3em;
+    img {
+        border-radius: 50%;
+        margin-left: .5em;
+    }
+}
+
+.userProfile {
+    text-align: center;
+    nav {
+        @extend .col-xs-12;
+    }
+    h2 {
+        @extend .col-xs-12;
+    }
+    button {
+        @extend .btn;
+        @extend .btn-default;
+    }
+}
+
+.saved-list {
+    @extend .list-group;
+    margin-top: 3em;
+    li {
+        @extend .col-xs-10;
+        @extend .col-xs-offset-1;
+        @extend .list-group-item;
+    }
+}
+
+.saved-list {
+    @extend .list-group;
+    margin-top: 3em;
+    li {
+        @extend .list-group-item;
     }
 }

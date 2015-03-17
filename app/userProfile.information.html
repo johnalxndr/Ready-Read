@@ -1,0 +1,10 @@
+<h4>User Information</h4>
+<p>Your Information:</p>
+<form class="col-md-6" ng-submit="user.profileUpdate()">
+  <div class="form-group">
+    <label>Set Up Your ReadyRead goals</label>
+    <input type="text" class="form-control" placeholder="Your Goal for Minutes Spent Reading...." ng-model="user.newData.timeGoal">
+    <input type="text" class="form-control" placeholder="Any Other Goals" ng-model="user.newData.other">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

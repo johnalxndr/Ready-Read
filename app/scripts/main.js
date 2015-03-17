@@ -11,65 +11,71 @@ readyRead.config(function (RestangularProvider) {
     })
 })
 
-readyRead.controller('LoginController', function () {
-    var base = new Firebase('https://readyread.firebaseio.com/')
-    var userArticle = new Firebase('https://readyread.firebaseio.com/articles')
-    var auth = base.getAuth()
-    console.log(auth)
-    this.display = base.onAuth(function (authData) {
-        if (authData) {
-            // save the user's profile into Firebase so we can list users,
-            // use them in Security and Firebase Rules, and show profiles
-            base.child("users").child(authData.uid).set({
-                provider: authData.provider,
-                name: authData.twitter.displayName
-            });
-            $('.userDisplay').html('Hello ' + authData.twitter.displayName)
-        }
-    });
-    this.logUserIn = function () {
-        base.authWithOAuthPopup("twitter", function (error, authData) {
-            if (error) {
-                console.log("Login Failed!", error);
-            } else {
-                console.log("Authenticated successfully with payload:", authData);
+readyRead.controller('LoginController', function (angularAuth) {
+    this.login = angularAuth.logIn
+    this.logout = angularAuth.logout
+})
+readyRead.controller('FeedController', function (api, angularAuth, $firebaseObject) {
+    var self = this;
+    api.tech.then(function (data) {
+        self.articles = data.results.collection1
+    })
+    api.news.then(function (data) {
+        self.newsArticles = data.results.collection1
+    })
+    this.timeCount = function (text) {
+        var s = text ? text.split(/\s+/) : 0;
+        return Math.round(s ? s.length / 190 : '');
+    };
+    this.wordCount = function (text) {
+        var s = text ? text.split(/\s+/) : 0;
+        return s ? s.length : '';
+    };
+    this.markedAsRead = function (words, time) {
+        var base = new Firebase('https://readyread.firebaseio.com/users/')
+        var userBase = $firebaseObject(base.child(base.getAuth().uid))
+        var users = new Firebase('https://readyread.firebaseio.com/users/' + base.getAuth().uid)
+        userBase.$loaded().then(function (data) {
+            self.time = data.timeRead
+            self.words = data.wordsRead
+            users.update({
+                timeRead: self.time + time,
+                wordsRead: self.words + words
+            })
+        })
+    }
+})
+readyRead.controller('UserProfileController', function (angularAuth, $firebaseObject, $firebaseArray) {
+    var self = this;
+    var base = new Firebase('https://readyread.firebaseio.com/users/')
+    var userBase = $firebaseObject(base.child(base.getAuth().uid))
+    var userHistory = $firebaseArray(new Firebase('https://readyread.firebaseio.com/articles/' + base.getAuth().uid))
+    userBase.$loaded()
+        .then(function (data) {
+            self.displayName = data.displayName
+            self.avatar = data.picture
+            self.wordCount = data.wordsRead
+            self.other = data.other
+            self.time = data.timeGoal
+            self.progress = Math.floor((data.timeRead / data.timeGoal) * 100);
+            self.wordTracker = Math.floor((data.wordsRead / 100000) * 100);
+            if (data.timeRead === undefined) {
+                base.child(data.$id).update({
+                    wordsRead: 0,
+                    timeRead: 0
+                })
             }
         });
-    }
-    this.logOut = function () {
-        base.unauth(function () {
-            $('.userDisplay').html('')
+    userHistory.$loaded()
+        .then(function (data) {
+            self.list = data
         })
-    }
-    this.hello = function () {
-        base.onAuth(function (authData) {
-            if (authData) {
-                console.log('ello ello')
-            } else {
-                console.log('log in to use this feature')
-            }
+    this.profileUpdate = function () {
+        base.child(base.getAuth().uid).update({
+            timeGoal: Number(this.newData.timeGoal),
+            other: this.newData.other
         })
+        this.newData = ''
     }
-    this.addCustomArticle = function () {
-        var add = {
-            name: this.newArticle.name,
-            url: this.newArticle.name
-        }
-        base.onAuth(function (authData) {
-            if (authData) {
-                base.child('articles').child(authData.uid).push(add)
-                console.log('added to your list of added articles')
-            } else {
-                console.log('please log in to use this feature')
-            }
-        })
-    }
-
-})
-readyRead.controller('FeedController', function (api) {
-    var self = this;
-    api.then(function (data) {
-        self.articles = data.results.collection1
-        console.log(self.articles)
-    })
+    this.logout = angularAuth.logout
 })
