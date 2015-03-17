@@ -86,16 +86,27 @@ h1 {
         margin-left: .5em;
     }
 }
-
-.userProfile {
-    text-align: center;
-    h2 {
-        @extend .col-xs-12;
-    }
-    button {
-        @extend .btn;
-        @extend .btn-default;
-    }
+.userProfile{
+  text-align:center;
+  nav{
+    @extend .col-xs-12;
+  }
+  h2{
+    @extend .col-xs-12;
+  }
+  button{
+    @extend .btn;
+    @extend .btn-default;
+  }
+}
+.saved-list{
+  @extend .list-group;
+  margin-top: 3em;
+  li{
+    @extend .col-xs-10;
+    @extend .col-xs-offset-1;
+    @extend .list-group-item;
+  }
 }
 
 .saved-list {

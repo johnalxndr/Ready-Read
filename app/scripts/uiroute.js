@@ -26,6 +26,11 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: './feed.category.html',
             controller: 'FeedController as feed'
         })
+        .state('feed.news',{
+          url: '/feed.news',
+          templateUrl: './feed.news.html',
+          controller: 'FeedController as feed'
+        })
         .state('userProfile', {
             url: '/userProfile',
             templateUrl: './userProfile.html',
