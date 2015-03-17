@@ -1,8 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid title-list">
     <ul class="list-group">
         <li ng-repeat="article in feed.articles">
-          <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.title}}<span class="badge"><span ng-bind="feed.timeCount(article.text.text)"></span> min</span></a>
+            <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.title}}<span class="badge"><span ng-bind="feed.timeCount(article.text.text)"></span> min</span></a>
           <p ng-show="preview">{{article.text.text}}<button ng-show="feed.authData" ng-click="feed.markedAsRead(feed.wordCount(article.text.text),feed.timeCount(article.text.text))">markedAsRead</button></p>
+            </p>
         </li>
     </ul>
 </div>

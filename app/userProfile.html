@@ -1,11 +1,11 @@
-<div class="container userProfile">
-<h2>Welcome Back</h2>
-<h4> {{user.displayName}}</h4>
+<div class="userProfile">
+  <h2>Welcome Back!</h2>
 <nav>
-  <button type="button" ui-sref="userProfile.saved" class="fa fa-bookmark-o"></button>
-  <button type="button" ui-sref="userProfile.tracker"class="fa fa-bar-chart"></button>
-  <button type="button" ui-sref="userProfile.information" class="fa fa-user"></button>
-  <button type="button" ng-click="user.logout()"class="fa fa-sign-out"></button>
+  <button type="button" ui-sref="userProfile.saved" class="fa fa-bookmark-o"> Saved</button>
+  <button type="button" ui-sref="userProfile.tracker" class="fa fa-bar-chart"> Progress</button>
+  <button type="button" ui-sref="userProfile.information" class="fa fa-user"> Info</button>
 </nav>
-<p>Set up your Information <i class="fa fa-user"></i> to start keeping track of your Stats!</p>
-<div ui-view></div>
+</div>
+<div class="container">
+    <div ui-view></div>
+</div>

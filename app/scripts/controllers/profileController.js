@@ -12,6 +12,7 @@ readyRead.controller('UserProfileController', function(angularAuth,$firebaseObje
     self.other = data.other
     self.time = data.timeGoal
     self.progress = Math.floor((data.timeRead/data.timeGoal)*100);
+    console.log(self.timeCount)
     self.wordTracker = Math.floor((data.wordsRead/100000)*100);
     if(data.timeRead === undefined){
       base.child(data.$id).update({
@@ -26,10 +27,18 @@ readyRead.controller('UserProfileController', function(angularAuth,$firebaseObje
   })
   this.profileUpdate = function(){
     base.child(base.getAuth().uid).update({
-      timeGoal: Number(this.newData.timeGoal),
-      other: this.newData.other
+      timeGoal: Number(this.newData.timeGoal)
     })
     this.newData = ''
   }
-  this.logout = angularAuth.logout
+  this.resetTime = function(){
+    base.child(base.getAuth().uid).update({
+      timeRead: 0
+    })
+  }
+  this.resetWords = function(){
+    base.child(base.getAuth().uid).update({
+      wordsRead: 0
+    })
+  }
 })

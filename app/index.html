@@ -10,6 +10,10 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css" />
+    <!--<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />-->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- endbower -->
     <!-- endbuild -->
@@ -19,35 +23,29 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
-
     <!-- endbuild -->
 </head>
-
 <body ng-controller="MainController as main">
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <div class="login-menu">
-            <a class ui-sref="login">login</a>
-            <a class ui-sref="feed.category">feed</a>
-          </div>
-          <div class="dropdown" ng-show="main.authData">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              <i class="fa fa-bars"></i>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="userProfile"><i class="fa fa-user-secret"></i>  Profile</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="login" ng-click="main.logout()"><i class="fa fa-power-off"></i>  Logout</a></li>      
-            </ul>
-          </div>
-        </div>
-        <div ui-view></div>
-
-
-
-
-
-
+      <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="login">
+        <i class="fa fa-newspaper-o"></i> ReadyRead
+      </a>
     </div>
+      <ul class="nav navbar-nav navbar-right" ng-show="main.authData">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-secret"></i> <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="userProfile"><i class="fa fa-info"></i> Profile</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="feed.category"><i class="fa fa-eye"></i> Browse</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="login" ng-click="main.logout()"><i class="fa fa-power-off"></i> Logout</a></li>
+          </ul>
+    </div>
+  </nav>
+      <div ui-view></div>
+
+
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -73,16 +71,16 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="/bower_components/restangular/dist/restangular.js"></script>
-    <script src="/bower_components/firebase/firebase.js"></script>
-    <script src="/bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="../bower_components/restangular/dist/restangular.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
