@@ -26,10 +26,10 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: './feed.category.html',
             controller: 'FeedController as feed'
         })
-        .state('feed.news',{
-          url: '/feed.news',
-          templateUrl: './feed.news.html',
-          controller: 'FeedController as feed'
+        .state('feed.news', {
+            url: '/feed.news',
+            templateUrl: './feed.news.html',
+            controller: 'FeedController as feed'
         })
         .state('userProfile', {
             url: '/userProfile',
@@ -50,5 +50,10 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             url: '/userProfileInformation',
             templateUrl: './userProfile.information.html',
             controller: 'UserProfileController as user'
+        })
+        .state('feed.sports', {
+            url: '/feed.sports',
+            templateUrl: './feed.sports.html',
+            controller: 'FeedController as feed'
         })
 })

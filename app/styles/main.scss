@@ -1,8 +1,10 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 //Primary Colors
+$primary-green:#16a085;
 $green: #1ABC9C;
 $grey: #34495E;
+$midnight-blue:#2C3E50;
 $body-bg: #c1bdba;
 $form-bg: #13232f;
 $white: #ffffff;
@@ -45,9 +47,18 @@ h1 {
 }
 
 //---------Feed.Category-----------
+.cat-container {
+    a {
+        color: #ffffff;
+    }
+    a:hover {
+        color: $primary-green;
+    }
+}
+
 .cat-btn {
     width: 25%;
-    background-color: aqua;
+    background-color: $grey;
     display: inline-block;
     margin-bottom: 1em;
 }
@@ -58,7 +69,7 @@ h1 {
 }
 
 .cat-btn:hover {
-    background-color: darkblue;
+    background-color: $midnight-blue;
 }
 
 //---------Feed.title-------------
@@ -86,27 +97,29 @@ h1 {
         margin-left: .5em;
     }
 }
-.userProfile{
-  text-align:center;
-  nav{
-    @extend .col-xs-12;
-  }
-  h2{
-    @extend .col-xs-12;
-  }
-  button{
-    @extend .btn;
-    @extend .btn-default;
-  }
+
+.userProfile {
+    text-align: center;
+    nav {
+        @extend .col-xs-12;
+    }
+    h2 {
+        @extend .col-xs-12;
+    }
+    button {
+        @extend .btn;
+        @extend .btn-default;
+    }
 }
-.saved-list{
-  @extend .list-group;
-  margin-top: 3em;
-  li{
-    @extend .col-xs-10;
-    @extend .col-xs-offset-1;
-    @extend .list-group-item;
-  }
+
+.saved-list {
+    @extend .list-group;
+    margin-top: 3em;
+    li {
+        @extend .col-xs-10;
+        @extend .col-xs-offset-1;
+        @extend .list-group-item;
+    }
 }
 
 .saved-list {
