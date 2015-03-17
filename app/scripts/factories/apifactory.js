@@ -5,5 +5,4 @@ readyRead.factory('api', function (Restangular) {
         news: Restangular.one('7pe51x78').get(),
         sports: Restangular.one('61cspj3g').get()
     }
-
 })

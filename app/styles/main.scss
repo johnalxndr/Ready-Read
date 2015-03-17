@@ -22,6 +22,11 @@ $br: 4px;
 h1 {
     color: $green;
 }
+//----NavBar-------
+
+.navbar{
+
+}
 
 //-----LOGIN PAGE----------
 .well {
@@ -92,45 +97,99 @@ h3 {
         text-decoration: none;
     }
 }
-
-.nav-social {
-    float: right;
-    color: $green;
-    font-size: 1.3em;
-    img {
-        border-radius: 50%;
-        margin-left: .5em;
-    }
-}
-
+//-------UserProfile------
 .userProfile {
+  h2 {
     text-align: center;
+    color: $primary-green;
+  }
     nav {
         @extend .col-xs-12;
-    }
-    h2 {
-        @extend .col-xs-12;
+        text-align: center;
+        margin-bottom: 3em;
     }
     button {
         @extend .btn;
         @extend .btn-default;
+        border-color: $primary-green;
+        color: $midnight-blue;
+        background-color: $primary-green;
+        box-shadow: 5px 5px 5px $midnight-blue;
+        &:hover{
+          background-color: $midnight-blue;
+          color: $primary-green;
+          box-shadow: 5px 5px 5px $primary-green;
+        }
+      }
     }
+
+.progress-bar:last-child:before{
+    content:none;
+  }
+
+.userInformation{
+  .alert {
+    @extend .col-xs-12;
+    @extend .col-md-5;
+    @extend .col-md-offset-1;
+    text-align: center;
+    margin-top: 2em;
+    button{
+      @extend .btn;
+      @extend .btn-danger;
+      box-shadow: 2px 2px 2px red;
+    }
+  }
+  form {
+    @extend .col-xs-12;
+    @extend .col-md-6;
+  }
+  small{
+    @extend .col-xs-12;
+  }
+  h4 {
+    text-align: center;
+  }
+  form {
+    text-align:center;
+  }
+}
+.tracker{
+  h4{
+    text-align:center;
+  }
+  small{
+    @extend .col-xs-12;
+    text-align: center;
+  }
+  p{
+    @extend .col-xs-12;
+    text-align: center;
+  }
 }
 
-.saved-list {
-    @extend .list-group;
-    margin-top: 3em;
-    li {
-        @extend .col-xs-10;
-        @extend .col-xs-offset-1;
-        @extend .list-group-item;
-    }
-}
+.savedArticles {
+  h4 {
+    text-align: center;
+  }
 
-.saved-list {
+ul {
     @extend .list-group;
-    margin-top: 3em;
     li {
+        @extend .col-xs-12;
         @extend .list-group-item;
+        text-align: center;
+        background-color: lightgrey;
+        opacity: .7;
+        font-size: 1.3em;
+        color: $midnight-blue;
+        border: solid $primary-green;
+        margin-top:1em;
+        &:hover{
+          opacity: 1;
+          border-color: $midnight-blue;
+          box-shadow: 5px 5px 5px $primary-green;
+        }
     }
+  }
 }
