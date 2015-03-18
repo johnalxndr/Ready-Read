@@ -193,3 +193,11 @@ ul {
     }
   }
 }
+
+[ui-view].ng-enter  {
+  -webkit-animation: enter_sequence .3s linear; /* Safari/Chrome */
+}
+@-webkit-keyframes enter_sequence {
+  from { opacity:0; }
+  to { opacity:1; }
+}
