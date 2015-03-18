@@ -22,11 +22,9 @@ html {
 h1 {
     color: $green-light;
 }
+
 //----NavBar-------
-
-.navbar{
-
-}
+.navbar {}
 
 //-----LOGIN PAGE----------
 .well {
@@ -85,18 +83,33 @@ h1 {
             }
         }
         a:hover {
-            color: $silver;
+            color: $wet-blue;
             background-color: $clouds;
+        }
+        a.list-group-item:hover {
+            //            background-color: $green-light;
+            //            color: $green-light;
+        }
+        a.list-group-item:focus {}
+        p {
+            margin-top: 1em;
+            font-size: 1.1em;
+            color: black;
+            text-rendering: optimizeLegibility;
+            font-weight: 400;
+            line-height: 2em;
+            max-width: 100%;
+            text-align: inherit;
         }
     }
 }
+
 //----------------------------------
 .feed {
     li {
         text-decoration: none;
     }
 }
-
 
 .nav-social {
     float: right;
@@ -108,12 +121,26 @@ h1 {
     }
 }
 
+//----------NAV BAR---------------------------
+nav {
+    ul {
+        li {
+            a {
+                i {
+                    float: right;
+                    margin-top: -3.7em;
+                }
+            }
+        }
+    }
+}
+
 //-------UserProfile------
 .userProfile {
-  h2 {
-    text-align: center;
-    color: $primary-green;
-  }
+    h2 {
+        text-align: center;
+        color: $green-light;
+    }
     nav {
         @extend .col-xs-12;
         text-align: center;
@@ -122,85 +149,85 @@ h1 {
     button {
         @extend .btn;
         @extend .btn-default;
-        border-color: $primary-green;
+        border-color: $green-light;
         color: $midnight-blue;
-        background-color: $primary-green;
+        background-color: $green-light;
         box-shadow: 5px 5px 5px $midnight-blue;
-        &:hover{
-          background-color: $midnight-blue;
-          color: $primary-green;
-          box-shadow: 5px 5px 5px $primary-green;
+        a:hover {
+            background-color: $midnight-blue;
+            color: $green-light;
+            box-shadow: 5px 5px 5px $green-dark;
         }
-      }
     }
-
-.progress-bar:last-child:before{
-    content:none;
-  }
-
-.userInformation{
-  .alert {
-    @extend .col-xs-12;
-    @extend .col-md-5;
-    @extend .col-md-offset-1;
-    text-align: center;
-    margin-top: 2em;
-    button{
-      @extend .btn;
-      @extend .btn-danger;
-      box-shadow: 2px 2px 2px red;
-    }
-  }
-  form {
-    @extend .col-xs-12;
-    @extend .col-md-6;
-  }
-  small{
-    @extend .col-xs-12;
-  }
-  h4 {
-    text-align: center;
-  }
-  form {
-    text-align:center;
-  }
 }
-.tracker{
-  h4{
-    text-align:center;
-  }
-  small{
-    @extend .col-xs-12;
-    text-align: center;
-  }
-  p{
-    @extend .col-xs-12;
-    text-align: center;
-  }
+
+.progress-bar:last-child:before {
+    content: none;
+}
+
+.userInformation {
+    .alert {
+        @extend .col-xs-12;
+        @extend .col-md-5;
+        @extend .col-md-offset-1;
+        text-align: center;
+        margin-top: 2em;
+        button {
+            @extend .btn;
+            @extend .btn-danger;
+            box-shadow: 2px 2px 2px red;
+        }
+    }
+    form {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+    }
+    small {
+        @extend .col-xs-12;
+    }
+    h4 {
+        text-align: center;
+    }
+    form {
+        text-align: center;
+    }
+}
+
+.tracker {
+    h4 {
+        text-align: center;
+    }
+    small {
+        @extend .col-xs-12;
+        text-align: center;
+    }
+    p {
+        @extend .col-xs-12;
+        text-align: center;
+    }
 }
 
 .savedArticles {
-  h4 {
-    text-align: center;
-  }
-
-ul {
-    @extend .list-group;
-    li {
-        @extend .col-xs-12;
-        @extend .list-group-item;
+    h4 {
         text-align: center;
-        background-color: lightgrey;
-        opacity: .7;
-        font-size: 1.3em;
-        color: $midnight-blue;
-        border: solid $primary-green;
-        margin-top:1em;
-        &:hover{
-          opacity: 1;
-          border-color: $midnight-blue;
-          box-shadow: 5px 5px 5px $primary-green;
+    }
+    ul {
+        @extend .list-group;
+        li {
+            @extend .col-xs-12;
+            @extend .list-group-item;
+            text-align: center;
+            background-color: $silver;
+            opacity: .7;
+            font-size: 1.3em;
+            color: $midnight-blue;
+            border: solid $green-light;
+            margin-top: 1em;
+            &:hover {
+                opacity: 1;
+                border-color: $midnight-blue;
+                box-shadow: 5px 5px 5px $green-dark;
+            }
         }
     }
-  }
 }
