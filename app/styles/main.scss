@@ -23,9 +23,6 @@ h1 {
     color: $green-light;
 }
 
-//----NavBar-------
-.navbar {}
-
 //-----LOGIN PAGE----------
 .well {
     background-color: $silver;
@@ -122,14 +119,29 @@ h1 {
 }
 
 //----------NAV BAR---------------------------
-nav {
+.navbar-header {
+    clear: both;
+    .navbar-toggle .icon-bar {
+        color: $green-light;
+        background-color: $green-light;
+    }
+    a {
+        color: $green-light;
+        .read-logo {
+            color: $midnight-blue;
+        }
+    }
+}
+
+#navbarCollapse {
     ul {
         li {
             a {
-                i {
-                    float: right;
-                    margin-top: -3.7em;
-                }
+                color: $green-light;
+            }
+            a:hover {
+                color: $white;
+                background-color: $green-light;
             }
         }
     }
@@ -152,11 +164,9 @@ nav {
         border-color: $green-light;
         color: $midnight-blue;
         background-color: $green-light;
-        box-shadow: 5px 5px 5px $midnight-blue;
         a:hover {
             background-color: $midnight-blue;
             color: $green-light;
-            box-shadow: 5px 5px 5px $green-dark;
         }
     }
 }
