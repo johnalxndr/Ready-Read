@@ -1,10 +1,16 @@
+<section class="userInformation">
 <h4>User Information</h4>
-<p>Your Information:</p>
-<form class="col-md-6" ng-submit="user.profileUpdate()">
+<form ng-submit="user.profileUpdate()">
   <div class="form-group">
-    <label>Set Up Your ReadyRead goals</label>
-    <input type="text" class="form-control" placeholder="Your Goal for Minutes Spent Reading...." ng-model="user.newData.timeGoal">
-    <input type="text" class="form-control" placeholder="Any Other Goals" ng-model="user.newData.other">
+    <label>Set up Your ReadyRead time goal and see how your doing in the progress section of your profile!</label>
+    <small>Note: this will not reset your current time read, just your "goal"</small>
+    <input type="number" class="form-control" placeholder="enter a number......" ng-model="user.newData.timeGoal">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default">Update Goal!</button>
 </form>
+<div class="alert alert-danger" role="alert">
+  <button ng-click="user.resetWords()"><b>Reset Word Count</b></button>
+  <button ng-click="user.resetTime()"><b>Reset Time Read</b></button>
+  <small>Reset your counts, this cannot be undone</small>
+</div>
+</section>

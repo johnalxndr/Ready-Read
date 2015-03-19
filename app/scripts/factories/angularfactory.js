@@ -2,7 +2,6 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
     var base = new Firebase('https://readyread.firebaseio.com/')
     var users = $firebaseObject(base.child('users'))
     var articles = $firebaseArray(base.child('articles'))
-
     return {
         logIn: function () {
             base.authWithOAuthPopup("twitter", function (error, authData) {
@@ -17,7 +16,7 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
         },
         logout: function () {
             base.unauth()
-            $('.nav-social').html('')
+            base.getAuth()
             $state.go('login')
         },
         updateUser: base.onAuth(function (authData) {

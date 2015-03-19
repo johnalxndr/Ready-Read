@@ -1,16 +1,15 @@
-<h4>Your ReadyRead statistics</h4>
-
-<div class="well">
-  <p>Your current goal: {{user.time}} minutes</p>
-  <p>{{user.other}}</p>
-</div>
-<span>Your 'time' progress bar: {{user.progress}}/{{user.time}} minutes</span>
+<section class="tracker">
+<h4>ReadyRead progress for {{user.displayName}}!</h4>
+<small>You can reset your time and word count in the "Info" section of your profile</small>
+  <label>Your current goal: {{user.timeCount}}/{{user.time}} minutes ({{user.progress}}%)</label>
 <div class="progress">
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:{{user.progress}}%">
 </div>
 </div>
-<span>This bar tracks your word count. Keep track of how many words you have read when you "Mark Article as Read" Fill up this bar reach 100,000 words! Good Luck!</span>
+<label>Word Counter: {{user.wordCount | number}}/100,000 words</label>
 <div class="progress">
   <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width:{{user.wordTracker}}%">
   </div>
 </div>
+<p>The Word Counter keeps track of how many words you have read each time you "Mark Article As Read". Fill this bar up to reach 100,000 words! Good Luck!</p>
+</section>
