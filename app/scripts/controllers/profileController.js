@@ -20,7 +20,7 @@ readyRead.controller('UserProfileController', function(angularAuth,$firebaseObje
         timeRead: 0
       })
     }
-  });
+  })
   userHistory.$loaded()
   .then(function(data){
     self.list = data

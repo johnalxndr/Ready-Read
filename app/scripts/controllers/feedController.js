@@ -6,10 +6,13 @@ readyRead.controller('FeedController', function(api,angularAuth,$firebaseObject,
     self.authData = authData
   })
   api.tech.then(function(data){
-    self.articles=data.results.collection1
+    self.articles = data.results.collection1
   })
   api.news.then(function(data){
-    self.newsArticles = data.results.collection1
+    self.newsArticles = data.results
+  })
+  api.sports.then(function(data){
+
   })
   this.timeCount = function(text){
     var s = text ? text.split(/\s+/) : 0;
