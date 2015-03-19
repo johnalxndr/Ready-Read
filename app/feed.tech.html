@@ -1,4 +1,4 @@
-<div class="container-fluid title-list">
+<div class="container-fluid">
     <ul class="list-group">
         <li ng-repeat="article in feed.articles">
             <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.title}}<span class="badge"><span ng-bind="feed.timeCount(article.text.text)"></span> min</span></a>
