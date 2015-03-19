@@ -32,6 +32,10 @@ h1 {
     .tag-line {
         color: $body-bg;
         margin-bottom: 3em;
+        font-size: 1em;
+    }
+    span {
+        color: $midnight-blue;
     }
 }
 
@@ -92,6 +96,9 @@ h1 {
         list-style: none;
         a {
             color: $header-text;
+            padding: 1.5em;
+            font-size: 1em;
+            font-weight: 600;
             span {
                 background-color: $white;
                 color: $green-light;
@@ -101,19 +108,20 @@ h1 {
             color: $wet-blue;
             background-color: $clouds;
         }
-        a.list-group-item:hover {
-            //            background-color: $green-light;
-            //            color: $green-light;
+        a.list-group-item:hover {}
+        a.list-group-item:focus {
+            background-color: $clouds;
+            color: $wet-blue;
         }
-        a.list-group-item:focus {}
         p {
-            margin-top: 1em;
-            font-size: 1.1em;
+            margin-top: 2em;
+            font-size: 1.2em;
             color: black;
             text-rendering: optimizeLegibility;
             font-weight: 400;
             line-height: 2em;
-            max-width: 100%;
+            max-width: 50em;
+            margin: 0 auto;
             text-align: inherit;
         }
     }
