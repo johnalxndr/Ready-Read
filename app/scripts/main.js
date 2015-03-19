@@ -7,6 +7,7 @@ readyRead.config(function (RestangularProvider) {
         callback: 'JSON_CALLBACK'
     })
     RestangularProvider.setDefaultRequestParams({
-        apikey: 'lxZzI5UKXbWL2JK3DL0U2g2uCfMjFUgd',
+        apikey: 'lxZzI5UKXbWL2JK3DL0U2g2uCfMjFUgd', kimbypage: '1'
     })
+
 })
