@@ -11,7 +11,7 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'FeedController as feed'
         })
         .state('feed.tech', {
-            url: '/title',
+            url: '/feed.tech',
             templateUrl: './feed.tech.html',
             controller: 'FeedController as feed'
         })
@@ -48,6 +48,11 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
         .state('feed.sports', {
             url: '/feed.sports',
             templateUrl: './feed.sports.html',
+            controller: 'FeedController as feed'
+        })
+        .state('feed.ent', {
+            url: '/feed.ent',
+            templateUrl: './feed.ent.html',
             controller: 'FeedController as feed'
         })
 })
