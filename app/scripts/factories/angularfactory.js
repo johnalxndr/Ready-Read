@@ -1,5 +1,6 @@
 readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $firebaseObject, $state) {
     var base = new Firebase('https://readyread.firebaseio.com/')
+    var userBase = new Firebase('https://readyread.firebaseio.com/users/')
     var users = $firebaseObject(base.child('users'))
     var articles = $firebaseArray(base.child('articles'))
     return {
@@ -38,6 +39,18 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
             } else {
                 console.log('log in to use this feature')
             }
+        },
+        markAsRead: function (words) {
+          var myBase = $firebaseObject(userBase.child(base.getAuth().uid))
+          var users = new Firebase('https://readyread.firebaseio.com/users/' + base.getAuth().uid)
+          myBase.$loaded().then(function (data) {
+            self.time = data.timeRead
+            self.words = data.wordsRead
+            users.update({
+              timeRead: Math.floor(self.time +(words/190)),
+              wordsRead: self.words + words
+            })
+          })
         }
     }
 })
