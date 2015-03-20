@@ -1,6 +1,7 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 $header-text:#444444;
+$text:#666666;
 $green-light:#16a085;
 $green-dark: #16A085;
 $main: #1ab188;
@@ -32,7 +33,7 @@ h1 {
     .tag-line {
         color: $body-bg;
         margin-bottom: 3em;
-        font-size: 1em;
+        font-size: 1.5em;
     }
     span {
         color: $midnight-blue;
@@ -116,7 +117,7 @@ h1 {
         p {
             margin-top: 2em;
             font-size: 1.2em;
-            color: black;
+            color: $text;
             text-rendering: optimizeLegibility;
             font-weight: 400;
             line-height: 2em;
@@ -211,7 +212,6 @@ h1 {
         button {
             @extend .btn;
             @extend .btn-danger;
-            box-shadow: 2px 2px 2px red;
         }
     }
     form {
@@ -268,10 +268,16 @@ h1 {
     }
 }
 
-[ui-view].ng-enter  {
-  -webkit-animation: enter_sequence .3s linear; /* Safari/Chrome */
+[ui-view].ng-enter {
+    -webkit-animation: enter_sequence .3s linear;
+    /* Safari/Chrome */
 }
+
 @-webkit-keyframes enter_sequence {
-  from { opacity:0; }
-  to { opacity:1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

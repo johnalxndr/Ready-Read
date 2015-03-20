@@ -8,15 +8,7 @@ readyRead.config(function (RestangularProvider) {
     })
     RestangularProvider.setDefaultRequestParams({
         apikey: 'lxZzI5UKXbWL2JK3DL0U2g2uCfMjFUgd',
-        kimbypage: '1'
+        kimbypage: 1,
+        kimmodify: 1
     })
-
 })
-
-function cnt() {
-    var paragraphs = document.getElementsByTagName("p");
-
-    for (var i = 0; i < paragraphs.length; i++) {
-        alert(paragraphs[i].innerHTML);
-    }
-}
