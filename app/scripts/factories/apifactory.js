@@ -1,6 +1,4 @@
 readyRead.factory('api', function (Restangular) {
-    Restangular.setJsonp(true)
-
     return {
         tech: Restangular.one('bxsp64vm').get(),
         news: Restangular.one('e4ks0wxo').get(),
