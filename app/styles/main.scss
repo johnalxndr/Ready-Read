@@ -65,31 +65,31 @@ h1 {
 
 //---------Feed.Category-----------
 .cat-container {
+    text-align: center;
     margin: 0 auto;
     a {
-        resize: none;
-        color: $green-dark;
+        list-style: none;
+        text-decoration: none;
+        margin: 0 auto;
         .cat-btn {
             display: inline-block;
             padding: 3em;
-            i {
-                font-size: 2em;
-                text-align: center;
-            }
+            text-align: center;
+            font-size: 4em;
+            text-align: center;
+            color: $green-light;
+            margin: 0 auto;
         }
     }
     a:hover {
-        color: #ffffff;
-    }
-    h3 {
-        text-align: center;
+        color: $white;
     }
 }
 
-.cat-btn:hover {
-    background-color: $green-dark;
-}
-
+//
+//.cat-btn:hover {
+//    background-color: $green-dark;
+//}
 //---------Feed.titles-------------
 .list-group {
     text-decoration: none;
@@ -187,14 +187,13 @@ h1 {
     }
     button {
         @extend .btn;
-        @extend .btn-default;
-        border-color: $green-light;
-        color: $midnight-blue;
+        color: $white;
         background-color: $green-light;
-        a:hover {
-            background-color: $midnight-blue;
-            color: $green-light;
-        }
+        border: none;
+    }
+    button:hover {
+        color: $wet-blue;
+        background-color: $white;
     }
 }
 
@@ -259,25 +258,20 @@ h1 {
             color: $midnight-blue;
             border: solid $green-light;
             margin-top: 1em;
-            &:hover {
-                opacity: 1;
-                border-color: $midnight-blue;
-                box-shadow: 5px 5px 5px $green-dark;
-            }
         }
     }
 }
 
-[ui-view].ng-enter {
-    -webkit-animation: enter_sequence .3s linear;
-    /* Safari/Chrome */
-}
-
-@-webkit-keyframes enter_sequence {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+//[ui-view].ng-enter {
+//    -webkit-animation: enter_sequence .3s linear;
+//    /* Safari/Chrome */
+//}
+//
+//@-webkit-keyframes enter_sequence {
+//    from {
+//        opacity: 0;
+//    }
+//    to {
+//        opacity: 1;
+//    }
+//}
