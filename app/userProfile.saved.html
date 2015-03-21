@@ -1,9 +1,11 @@
 <section class="savedArticles">
 <h4>Your Saved Articles</h4>
+<small>Add more saved articles by clicking the "Save" button in the reader</small>
+
 <ul ng-repeat="saved in user.list" class="saved-list">
     <li>
         <h4><a href="{{saved.url}}">{{saved.title}}</a></4>
+          <button ng-click="user.removeSavedArticle(saved)">X</button>
     </li>
 </ul>
-<small>Add more saved articles by clicking the "Save" button in the reader</small>
 </section>
