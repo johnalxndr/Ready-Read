@@ -17,7 +17,7 @@ readyRead.controller('SportsController', function(api,angularAuth,$firebaseAuth)
   });
   api.sports.then(function(data){
     self.sportsNews = data.results;
-  })
+  });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
 })

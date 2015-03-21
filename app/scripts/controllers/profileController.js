@@ -17,9 +17,9 @@ readyRead.controller('UserProfileController', function(angularAuth,$firebaseObje
       base.child(data.$id).update({
         wordsRead: 0,
         timeRead: 0
-      })
+      });
     }
-  })
+  });
   userHistory.$loaded()
   .then(function(data){
     self.list = data;
@@ -33,21 +33,21 @@ readyRead.controller('UserProfileController', function(angularAuth,$firebaseObje
   this.resetTime = function(){
     base.child(base.getAuth().uid).update({
       timeRead: 0
-    })
+    });
     this.showTimeMessage = true;
     $timeout(function() {
           self.showTimeMessage = false;
-        }, 2000)
-  }
+        }, 2000);
+  };
   this.resetWords = function(){
     base.child(base.getAuth().uid).update({
       wordsRead: 0
-    })
+    });
     this.showWordMessage = true;
     $timeout(function(){
       self.showWordMessage = false;
-    }, 2000)
-  }
+    }, 2000);
+  };
   this.removeSavedArticle = function(article){
     userHistory.$remove(article);
   };

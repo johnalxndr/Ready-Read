@@ -7,5 +7,5 @@ readyRead.controller('MainController', function (angularAuth, $firebaseAuth) {
     this.getAuth = $firebaseAuth(base);
     this.getAuth.$onAuth(function (authData) {
         self.authData = authData;
-    })
+    });
 })

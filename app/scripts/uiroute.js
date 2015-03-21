@@ -1,5 +1,5 @@
 readyRead.config(function ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('login')
+  $urlRouterProvider.otherwise('login');
     $stateProvider
         .state('login', {
             url: '/login',
@@ -51,5 +51,5 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             url: '/userProfileInformation',
             templateUrl: '../userProfile.information.html',
             controller: 'UserProfileController as user'
-        })
+        });
 })
