@@ -1,7 +1,7 @@
 <div class="container-fluid title-list">
     <ul class="list-group">
         <li ng-repeat="article in ent.entNews">
-            <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="news.authData" ng-click="news.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span></a>
+            <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="ent.authData" ng-click="ent.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span></a>
             <h3 ng-show="preview" class="article-title text-center">{{article.collection1[0].title}}</h3>
             <p ng-show="preview" ng-repeat="body in article.collection2">
                 <br>{{body.text.text}}</p>

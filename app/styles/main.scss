@@ -2,9 +2,9 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 $header-text:#444444;
 $text:#666666;
-$green-light:#16a085;
-$green-dark: #16A085;
 $main: #1ab188;
+$green-dark:#1bc2a2;
+$green-light:#16a085;
 $midnight-blue:#2C3E50;
 $wet-blue:#34495e;
 $clouds:#ECF0F1;
@@ -108,7 +108,8 @@ h1 {
                 margin-left: 3ex;
             }
             .save-label:hover {
-                border: $midnight-blue;
+                background-color: $green-light;
+                color: $white;
             }
         }
         a:hover {
@@ -133,6 +134,17 @@ h1 {
             max-width: 50em;
             margin: 0 auto;
             text-align: inherit;
+        }
+        button {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            background-color: $green-light;
+            color: $white;
+            border: none;
+            box-shadow: none;
+        }
+        button:hover {
+            background-color: $green-dark;
         }
     }
 }
@@ -202,7 +214,7 @@ h1 {
     }
     button:hover {
         color: $wet-blue;
-        background-color: $white;
+        background-color: $green-dark;
     }
 }
 
