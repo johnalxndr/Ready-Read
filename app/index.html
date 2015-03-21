@@ -27,32 +27,6 @@
 </head>
 
 <body ng-controller="MainController as main">
-    <!--
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="login">
-                <i class="fa fa-newspaper-o"></i> ReadyRead
-            </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right" ng-show="main.authData">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-secret"></i>
-                    </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li role="presentation">
-                        <a role="menuitem" tabindex="-1" ui-sref="userProfile"><i class="fa fa-info"></i> Profile</a>
-                    </li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="feed.category"><i class="fa fa-eye"></i> Browse</a>
-                    </li>
-                    <li role="presentation"><i class="fa fa-power-off"></i><a role="menuitem" tabindex="-1" ui-sref="logout" ng-click="main.logout()">Logout</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
--->
     <nav class="navbar navbar">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,7 +48,7 @@
                     </li>
                 </ul>
                 <ul ng-click="isCollapsed=!isCollapsed" class="nav navbar-nav navbar-right">
-                    <li ui-sref="logout" ng-click="main.logout()" ng-show="main.authData"><a href="#">Logout</a>
+                    <li ng-click="main.logout()" ng-show="main.authData"><a ui-sref="login">Logout</a>
                     </li>
                 </ul>
             </div>
