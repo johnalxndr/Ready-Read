@@ -261,6 +261,15 @@ h1 {
     }
 }
 
+.time-span {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.time-span.ng-hide {
+    opacity: 0;
+}
+
 [ui-view].ng-enter {
     -webkit-animation: enter_sequence .3s linear;
     /* Safari/Chrome */
