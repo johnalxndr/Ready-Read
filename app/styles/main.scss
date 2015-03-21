@@ -100,13 +100,23 @@ h1 {
             padding: 1.5em;
             font-size: 1.1em;
             span {
-                background-color: $white;
+                background-color: $clouds;
                 color: $green-light;
+            }
+            .save-label {
+                float: right;
+                margin-left: 3ex;
+            }
+            .save-label:hover {
+                border: $midnight-blue;
             }
         }
         a:hover {
             color: $wet-blue;
             background-color: $clouds;
+            span {
+                border: $midnight-blue;
+            }
         }
         a.list-group-item:hover {}
         a.list-group-item:focus {
