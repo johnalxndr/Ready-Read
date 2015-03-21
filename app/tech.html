@@ -1,0 +1,11 @@
+<div class="container-fluid title-list">
+    <ul class="list-group">
+        <li ng-repeat="article in tech.techNews">
+            <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span class="badge">{{article.wordcount/190 | number:0}} min</span></a>
+            <h3 ng-show="preview" class="article-title text-center">{{article.collection1[0].title}}</h3>
+            <p ng-show="preview" ng-repeat="body in article.collection2">{{body.text.text}}</p>
+            <button class="btn btn-info" ng-show="tech.authData" ng-click="tech.markRead(article.wordcount)">Mark Read</button>
+            <button class="btn btn-info" ng-show="tech.authData" ng-click="tech.save(article.collection1[0].title,article.url)">Save Article</button>
+        </li>
+    </ul>
+</div>

@@ -32,37 +32,30 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button ng-click="isCollapsed = !isCollapsed" type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <button ng-click="isCollapsed=!isCollapsed" type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand"><i class="fa fa-newspaper-o"></i> Ready<span class="read-logo">Read</span></a>
+                <a ui-sref="login" class="navbar-brand"><i class="fa fa-newspaper-o"></i> Ready<span class="read-logo">Read</span></a>
+
             </div>
             <!-- Collection of nav links and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul ng-click="isCollapsed = !isCollapsed" class="nav navbar-nav">
-                    <li><a ui-sref="userProfile">Profile</a>
+                <ul ng-click="isCollapsed=!isCollapsed" class="nav navbar-nav">
+                    <li><a ui-sref="category">Browse</a>
                     </li>
-                    <li><a ui-sref="feed.category">Browse</a>
+                    <li ng-show="main.authData"><a ui-sref="userProfile">Profile</a>
                     </li>
                 </ul>
-                <ul ng-click="isCollapsed = !isCollapsed" class="nav navbar-nav navbar-right">
-                    <li ui-sref="logout" ng-click="main.logout()"><a href="#">Logout</a>
+                <ul ng-click="isCollapsed=!isCollapsed" class="nav navbar-nav navbar-right">
+                    <li ng-click="main.logout()" ng-show="main.authData"><a ui-sref="login">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
 
     <div ui-view></div>
 
@@ -118,6 +111,10 @@
     <script src="scripts/controllers/profileController.js"></script>
     <script src="scripts/controllers/mainController.js"></script>
     <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/entController.js"></script>
+    <script src="scripts/controllers/sportsController.js"></script>
+    <script src="scripts/controllers/newsController.js"></script>
+    <script src="scripts/controllers/techController.js"></script>
     <!-- endbuild -->
 </body>
 
