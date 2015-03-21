@@ -9,4 +9,5 @@ readyRead.controller('SportsController', function(api,angularAuth,$firebaseAuth)
     self.sportsNews = data.results;
   })
   this.markRead = angularAuth.markAsRead
+  this.save = angularAuth.saveArticle
 })

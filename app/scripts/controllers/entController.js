@@ -9,4 +9,5 @@ readyRead.controller('EntController', function(api,angularAuth,$firebaseAuth){
     self.entNews = data.results;
   })
   this.markRead = angularAuth.markAsRead
+  this.save = angularAuth.saveArticle
 })

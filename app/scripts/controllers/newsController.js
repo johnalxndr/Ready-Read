@@ -9,4 +9,5 @@ readyRead.controller('NewsController', function(api,angularAuth,$firebaseAuth){
     self.newsNews = data.results;
   })
   this.markRead = angularAuth.markAsRead
+  this.save = angularAuth.saveArticle
 })

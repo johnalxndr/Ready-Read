@@ -1,8 +1,8 @@
 readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $firebaseObject, $state) {
     var base = new Firebase('https://readyread.firebaseio.com/')
     var userBase = new Firebase('https://readyread.firebaseio.com/users/')
+    var userArticles = new Firebase('https://readyread.firebaseio.com/articles/')
     var users = $firebaseObject(base.child('users'))
-    var articles = $firebaseArray(base.child('articles'))
     return {
         logIn: function () {
             base.authWithOAuthPopup("twitter", function (error, authData) {
@@ -30,16 +30,6 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
                 })
             }
         }),
-        saveArticle: function (saved) {
-            var userArticles = $firebaseArray(base.child('articles').child(base.getAuth().uid))
-            if (base.getAuth().uid) {
-                userArticles.$add(saved).then(function (base) {
-                    console.log(saved)
-                })
-            } else {
-                console.log('log in to use this feature')
-            }
-        },
         markAsRead: function (words) {
           var myBase = $firebaseObject(userBase.child(base.getAuth().uid))
           var users = new Firebase('https://readyread.firebaseio.com/users/' + base.getAuth().uid)
@@ -51,6 +41,13 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
               wordsRead: self.words + words
             })
           })
+        },
+        saveArticle: function(title,url){
+          var myArticles = $firebaseArray(userArticles.child(base.getAuth().uid))
+          myArticles.$add({
+            title: title,
+            url: url
+          })
         }
-    }
+      }
 })
