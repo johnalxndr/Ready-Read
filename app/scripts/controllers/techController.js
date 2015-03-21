@@ -19,6 +19,9 @@ readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$f
     self.techNews = data.results;
     console.log(data.results)
   })
+  this.test = function(){
+    console.log('saved')
+  }
   this.markRead = angularAuth.markAsRead
   this.save = angularAuth.saveArticle
 })
