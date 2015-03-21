@@ -1,4 +1,7 @@
 <div class="container-fluid title-list">
+    <button class="btn btn-default filter-button" ng-click="sports.orderByTime()">Shortest</button>
+    <button class="btn btn-default filter-button" ng-click="sports.orderByTimeHigh()">Longest</button>
+    <button class="btn btn-default filter-button" ng-click="sports.resetOrder()">Most Recent</button>
     <ul class="list-group">
         <li ng-repeat="article in sports.sportsNews">
             <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="sports.authData" ng-click="sports.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span></a>

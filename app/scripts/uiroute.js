@@ -1,4 +1,5 @@
 readyRead.config(function ($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('login')
     $stateProvider
         .state('login', {
@@ -16,8 +17,7 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '../news.html',
             controller: 'NewsController as news'
         })
-
-    .state('sports', {
+        .state('sports', {
             url: '/sports',
             templateUrl: '../sports.html',
             controller: 'SportsController as sports'

@@ -1,4 +1,7 @@
 <div class="container-fluid title-list">
+    <button class="btn btn-default filter-button" ng-click="tech.orderByTime()">Filter by Read Time</button>
+    <button class="btn btn-default filter-button" ng-click="tech.orderByTimeHigh()">Filter by Read Time(highest first)</button>
+    <button class="btn btn-default filter-button" ng-click="tech.resetOrder()">Recent Articles</button>
     <ul class="list-group">
         <li ng-repeat="article in tech.techNews">
             <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="tech.authData" ng-click="tech.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span>
