@@ -1,8 +1,0 @@
-<div class="container-fluid">
-      <div ng-repeat="article in feed.newsArticles">
-          <h2>{{article.collection1[0].title}}</h2>
-          <p ng-repeat="body in article.collection2">{{body.text.text}}</p>
-      </div>
-                <button ng-show="feed.authData" ng-click="feed.markedAsRead(feed.wordCount(article.text.text),feed.timeCount(article.text.text))">markedAsRead</button>
-            </p>
-</div>
