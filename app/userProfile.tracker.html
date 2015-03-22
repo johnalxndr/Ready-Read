@@ -1,19 +1,15 @@
-<div class="alert alert-dismissible alert-success">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong>HINT! </strong>Keep track of your progress read by clicking the <strong>Read</strong> button after reading each post!
-</div>
 <section class="tracker">
-    <h4>ReadyRead progress for {{user.displayName}}!</h4>
-    <small>You can reset your time and word count in the "Info" section of your profile</small>
-    <label>Your current goal: {{user.timeCount}}/{{user.time}} minutes ({{user.progress}}%)</label>
-    <div class="progress">
-        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:{{user.progress}}%">
-        </div>
-    </div>
-    <label>Word Counter: {{user.wordCount | number}}/100,000 words</label>
-    <div class="progress">
-        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width:{{user.wordTracker}}%">
-        </div>
-    </div>
-    <p></p>
+<h4>ReadyRead progress for {{user.displayName}}!</h4>
+<small>You can reset your time and word count in the "Info" section of your profile</small>
+  <label>Your current goal: {{user.timeCount}}/{{user.time}} minutes ({{user.progress}}%)</label>
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:{{user.progress}}%">
+</div>
+</div>
+<label>Word Counter: {{user.wordCount | number}}/100,000 words</label>
+<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width:{{user.wordTracker}}%">
+  </div>
+</div>
+<p>The Word Counter keeps track of how many words you have read each time you "Mark Article As Read". Fill this bar up to reach 100,000 words! Good Luck!</p>
 </section>
