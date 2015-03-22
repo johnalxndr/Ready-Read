@@ -86,12 +86,22 @@ h1 {
     }
 }
 
-//
-//.cat-btn:hover {
-//    background-color: $green-dark;
-//}
 //---------Feed.titles-------------
+.filter-button {
+    float: right;
+    background-color: $white;
+    color: $green-light;
+    border: none;
+    margin-left: 1ex;
+}
+
+.filter-button:hover {
+    color: $white;
+    background-color: $green-light;
+}
+
 .list-group {
+    margin-top: 2em;
     text-decoration: none;
     li {
         list-style: none;
@@ -221,12 +231,8 @@ h1 {
 .progress-bar:last-child:before {
     content: none;
 }
-
 .userInformation {
     .alert {
-        @extend .col-xs-12;
-        @extend .col-md-5;
-        @extend .col-md-offset-1;
         text-align: center;
         margin-top: 2em;
         button {
@@ -241,46 +247,63 @@ h1 {
     small {
         @extend .col-xs-12;
     }
-    h4 {
+    h3 {
         text-align: center;
+        color: $wet-blue;
     }
     form {
         text-align: center;
     }
 }
 
-.tracker {
-    h4 {
-        text-align: center;
+//---------SAVED PAGE---------
+.savedArticles {
+    h3 {
+        text-align: left;
+        color: $wet-blue;
     }
-    small {
-        @extend .col-xs-12;
-        text-align: center;
+    .alert {
+        border: none;
+        color: $wet-blue;
     }
-    p {
-        @extend .col-xs-12;
-        text-align: center;
+    .saved-panel {
+        .panel-heading {
+            background-color: $green-light;
+            .panel-title {
+                color: white;
+            }
+        }
+        .panel-body {
+            .saved-list {
+                .url-list {
+                    list-style: none;
+                    padding-bottom: 1ex;
+                    a {
+                        text-decoration: none;
+                        color: $green-light;
+                        font-size: 1.5em;
+                    }
+                    button {
+                        background-color: $white;
+                        border: none;
+                        float: right;
+                        i {
+                            font-size: 3ex;
+                            color: $silver;
+                        }
+                        i:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-.savedArticles {
-    h4 {
-        text-align: center;
-    }
-    ul {
-        @extend .list-group;
-        li {
-            @extend .col-xs-12;
-            @extend .list-group-item;
-            text-align: center;
-            background-color: $silver;
-            opacity: .7;
-            font-size: 1.3em;
-            color: $midnight-blue;
-            border: solid $green-light;
-            margin-top: 1em;
-        }
-    }
+.tracker {
+    border: 4px solid $green-light;
+    padding: 3em;
 }
 
 .time-span {

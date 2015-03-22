@@ -1,11 +1,20 @@
 <section class="savedArticles">
-    <h4>Your Saved Articles</h4>
-    <small>Add more saved articles by clicking the "Save" button in the reader</small>
-
-    <ul ng-repeat="saved in user.list" class="saved-list">
-        <li>
-            <h4><a href="{{saved.url}}">{{saved.title}}</a></h4>
-            <button ng-click="user.removeSavedArticle(saved)">X</button>
-        </li>
-    </ul>
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Heads up! </strong>Add more saved articles by clicking the <strong>Save</strong> button in the reader.
+    </div>
+    <div class="saved-panel panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Saved</h3>
+        </div>
+        <div class="panel-body">
+            <ul ng-repeat="saved in user.list" class="saved-list">
+                <li class="url-list">
+                    <a href="{{saved.url}}">{{saved.title}}</a>
+                    <button ng-click="user.removeSavedArticle(saved)"><i class="fa fa-trash-o"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
