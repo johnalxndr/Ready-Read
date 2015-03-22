@@ -69,20 +69,38 @@ h1 {
     a {
         list-style: none;
         text-decoration: none;
-        margin: 0 auto;
         .cat-btn {
+            margin-top: 2em;
             display: inline-block;
-            padding: 3em;
             text-align: center;
-            font-size: 4em;
+            font-size: 3em;
             text-align: center;
             color: $green-light;
-            margin: 0 auto;
         }
         .cat-btn:hover {
             background: $green-light;
             color: $white;
         }
+    }
+    .tech {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .news {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .sports {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .ent {
+        @extend .col-xs-12;
+        @extend .col-md-3;
+        @extend .col-lg-3;
     }
 }
 
@@ -231,21 +249,45 @@ h1 {
 .progress-bar:last-child:before {
     content: none;
 }
+
 .userInformation {
     .alert {
+        @extend .col-sm-12;
+        margin-top: 1em;
+        border: none;
         text-align: center;
-        margin-top: 2em;
         button {
             @extend .btn;
             @extend .btn-danger;
+            border: none;
+            margin-top: 1em;
+            text-align: center;
+        }
+        p {
+            margin-top: 1em;
         }
     }
     form {
-        @extend .col-xs-12;
-        @extend .col-md-6;
-    }
-    small {
-        @extend .col-xs-12;
+        @extend .col-sm-12;
+        background-color: $clouds;
+        color: $midnight-blue;
+        padding: 3em;
+        margin: 0 auto;
+        max-width: 50em;
+        border: none;
+        button {
+            box-shadow: none;
+            border: $green-light;
+        }
+        .form-group {
+            input {
+                text-align: center;
+            }
+            .form-control {
+                margin-top: 1em;
+                border: none;
+            }
+        }
     }
     h3 {
         text-align: center;
