@@ -1,3 +1,4 @@
+'use strict';
 readyRead.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('login');
     $stateProvider

@@ -1,4 +1,5 @@
-  readyRead.controller('FeedController', function (api, angularAuth, $firebaseObject, $firebaseAuth) {
+'use strict';
+readyRead.controller('FeedController', function (api, angularAuth, $firebaseObject, $firebaseAuth) {
     var self = this;
     var base = new Firebase('https://readyread.firebaseio.com/users/');
     this.getAuth = $firebaseAuth(base);

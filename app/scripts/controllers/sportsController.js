@@ -1,3 +1,4 @@
+'use strict';
 readyRead.controller('SportsController', function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
