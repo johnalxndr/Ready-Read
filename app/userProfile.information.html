@@ -1,16 +1,28 @@
-<section class="userInformation">
-<h4>User Information</h4>
-<form ng-submit="user.profileUpdate()">
-  <div class="form-group">
-    <label>Set up Your ReadyRead time goal and see how your doing in the progress section of your profile!</label>
-    <small>Note: this will not reset your current time read, just your "goal"</small>
-    <input type="number" class="form-control" placeholder="enter a number......" ng-model="user.newData.timeGoal">
-  </div>
-  <button type="submit" class="btn btn-default">Update Goal!</button>
-</form>
-<div class="alert alert-danger" role="alert">
-  <button ng-click="user.resetWords()"><b>Reset Word Count</b></button>
-  <button ng-click="user.resetTime()"><b>Reset Time Read</b></button>
-  <small>Reset your counts, this cannot be undone</small>
+<div class="container-fluid">
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>HINT! </strong>Updating your goal will not reset your current time read.
+    </div>
+    <section class="userInformation">
+        <h3>User Info</h3>
+        <form class="well well-lg" ng-submit="user.profileUpdate()">
+            <div class="form-group">
+                <label>Set your ReadyRead goal to track your progress!</label>
+
+                <input type="number" class="form-control" placeholder="Set your reading goal here!" ng-model="user.newData.timeGoal">
+            </div>
+            <button type="submit" class="btn btn-default update-goal">Update Goal!</button>
+        </form>
+        <div class="alert alert-danger" role="alert">
+            <p>
+                <span ng-show="user.showTimeMessage" style="display: block" class="time-span">Your Time has been reset</span>
+                <span ng-show="user.showWordMessage" style="display: block" class="time-span">Your Word Count has been reset</span>
+            </p>
+            <button ng-click="user.resetWords()"><b>Reset Word Count</b>
+            </button>
+            <button ng-click="user.resetTime()"><b>Reset Time Read</b>
+            </button>
+            <p>This cannot be undone</p>
+        </div>
+    </section>
 </div>
-</section>

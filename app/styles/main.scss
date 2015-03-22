@@ -1,108 +1,235 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
-//Primary Colors
-$primary-green:#16a085;
-$green: #1ABC9C;
-$grey: #34495E;
-$midnight-blue:#2C3E50;
-$body-bg: #c1bdba;
-$form-bg: #13232f;
-$white: #ffffff;
+$header-text:#444444;
+$text:#666666;
 $main: #1ab188;
-$main-light: lighten($main,
-5%);
-$main-dark: darken($main,
-5%);
-$gray-light: #a0b3b0;
-$gray: #ddd;
+$green-dark:#12826C;
+$green-light:#16a085;
+$midnight-blue:#2C3E50;
+$wet-blue:#34495e;
+$clouds:#ECF0F1;
+$silver:#BDC3C7;
+$concrete:#95A5A6;
+$white: #ffffff;
 $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
-h1 {
-    color: $green;
+body,
+html {
+    background-color: $white;
 }
-//----NavBar-------
 
-.navbar{
-
+h1 {
+    color: $green-light;
 }
 
 //-----LOGIN PAGE----------
 .well {
-    background-color: $grey;
+    background-color: $silver;
+    max-width: 40em;
+    margin: 0 auto;
+    margin-top: 5em;
     .tag-line {
         color: $body-bg;
+        margin-bottom: 3em;
+        font-size: 1.5em;
+    }
+    span {
+        color: $midnight-blue;
     }
 }
 
 #loginForm {
     .button-container {
-        margin-top: 3em;
         text-align: center;
+        margin-top: 0em;
+        text-align: center;
+        max-width: 18em;
+        margin: 0 auto;
     }
     button {
         margin-top: 1em;
+        margin-bottom: 3em;
+    }
+    button:hover {
+        color: aliceblue;
     }
     a {
         text-decoration: none;
+    }
+    a:hover {
+        color: $white;
     }
 }
 
 //---------Feed.Category-----------
 .cat-container {
+    text-align: center;
     a {
-        text-align: center;
-        color: $primary-green;
+        list-style: none;
+        text-decoration: none;
+        .cat-btn {
+              padding: 1em 2em 1em 2em;
+            margin-top: 2em;
+            display: inline-block;
+            text-align: center;
+            font-size: 3em;
+            text-align: center;
+            color: $green-light;
+        }
+        .cat-btn:hover {
+            background: $green-light;
+            color: $white;
+        }
     }
-    a:hover {
-        color: #ffffff;
-        display: block;
+    .tech {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .news {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .sports {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .ent {
+        @extend .col-xs-12;
+        @extend .col-md-3;
+        @extend .col-lg-3;
     }
 }
 
-.cat-btn {
-    background-color: #ECF0F1;
-    display: inline-block;
-    margin-bottom: 0em;
-    text-align: center;
-    i {
-        font-size: 3em;
-        margin-top: 3em;
-    }
+//---------Feed.titles-------------
+.filter-button {
+    float: right;
+    background-color: $white;
+    color: $green-light;
+    border: none;
+    margin-left: 1ex;
 }
 
-.cat-btn:hover {
-    background-color: $primary-green;
+.filter-button:hover {
+    color: $white;
+    background-color: $green-light;
 }
 
-h3 {
-    text-align: center;
-    padding: 4em 1em;
-    margin-top: -3em;
-}
-
-//---------Feed.title-------------
-.title-list {
+.list-group {
+    margin-top: 2em;
     text-decoration: none;
-    ul {
-        li {
-            list-style: none;
+    li {
+        list-style: none;
+        a {
+            color: $header-text;
+            padding: 1.5em;
+            font-size: 1.1em;
+            span {
+                background-color: $clouds;
+                color: $green-light;
+            }
+            .save-label {
+                float: right;
+                margin-left: 3ex;
+            }
+            .save-label:hover {
+                background-color: $green-light;
+                color: $white;
+            }
+        }
+        a:hover {
+            color: $wet-blue;
+            background-color: $clouds;
+            span {
+                border: $midnight-blue;
+            }
+        }
+        a.list-group-item:hover {}
+        a.list-group-item:focus {
+            background-color: $clouds;
+            color: $wet-blue;
+        }
+        p {
+            margin-top: 2em;
+            font-size: 1.2em;
+            color: $text;
+            text-rendering: optimizeLegibility;
+            font-weight: 400;
+            line-height: 2em;
+            max-width: 50em;
+            margin: 0 auto;
+            text-align: inherit;
+        }
+        button {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            background-color: $green-light;
+            color: $white;
+            border: none;
+            box-shadow: none;
+        }
+        button:hover {
+            background-color: $green-dark;
         }
     }
 }
 
+//----------------------------------
 .feed {
     li {
         text-decoration: none;
     }
 }
+
+.nav-social {
+    float: right;
+    color: $green-light;
+    font-size: 1.3em;
+    img {
+        border-radius: 50%;
+        margin-left: .5em;
+    }
+}
+
+//----------NAV BAR---------------------------
+.navbar-header {
+    clear: both;
+    .navbar-toggle .icon-bar {
+        color: $green-light;
+        background-color: $green-light;
+    }
+    a {
+        color: $green-light;
+        .read-logo {
+            color: $midnight-blue;
+        }
+    }
+}
+
+#navbarCollapse {
+    ul {
+        li {
+            a {
+                color: $green-light;
+            }
+            a:hover {
+                color: $white;
+                background-color: $green-dark;
+            }
+        }
+    }
+}
+
 //-------UserProfile------
 .userProfile {
-  h2 {
-    text-align: center;
-    color: $primary-green;
-  }
+    h2 {
+        text-align: center;
+        color: $green-light;
+    }
     nav {
         @extend .col-xs-12;
         text-align: center;
@@ -110,94 +237,137 @@ h3 {
     }
     button {
         @extend .btn;
-        @extend .btn-default;
-        border-color: $primary-green;
-        color: $midnight-blue;
-        background-color: $primary-green;
-        box-shadow: 5px 5px 5px $midnight-blue;
-        &:hover{
-          background-color: $midnight-blue;
-          color: $primary-green;
-          box-shadow: 5px 5px 5px $primary-green;
-        }
-      }
+        color: $white;
+        background-color: $green-light;
+        border: none;
     }
-
-.progress-bar:last-child:before{
-    content:none;
-  }
-
-.userInformation{
-  .alert {
-    @extend .col-xs-12;
-    @extend .col-md-5;
-    @extend .col-md-offset-1;
-    text-align: center;
-    margin-top: 2em;
-    button{
-      @extend .btn;
-      @extend .btn-danger;
-      box-shadow: 2px 2px 2px red;
+    button:hover {
+        color: $white;
+        background-color: $green-dark;
     }
-  }
-  form {
-    @extend .col-xs-12;
-    @extend .col-md-6;
-  }
-  small{
-    @extend .col-xs-12;
-  }
-  h4 {
-    text-align: center;
-  }
-  form {
-    text-align:center;
-  }
-}
-.tracker{
-  h4{
-    text-align:center;
-  }
-  small{
-    @extend .col-xs-12;
-    text-align: center;
-  }
-  p{
-    @extend .col-xs-12;
-    text-align: center;
-  }
 }
 
-.savedArticles {
-  h4 {
-    text-align: center;
-  }
+.progress-bar:last-child:before {
+    content: none;
+}
 
-ul {
-    @extend .list-group;
-    li {
-        @extend .col-xs-12;
-        @extend .list-group-item;
+.userInformation {
+    .alert {
+        @extend .col-sm-12;
+        margin-top: 1em;
+        border: none;
         text-align: center;
-        background-color: lightgrey;
-        opacity: .7;
-        font-size: 1.3em;
-        color: $midnight-blue;
-        border: solid $primary-green;
-        margin-top:1em;
-        &:hover{
-          opacity: 1;
-          border-color: $midnight-blue;
-          box-shadow: 5px 5px 5px $primary-green;
+        button {
+            @extend .btn;
+            @extend .btn-danger;
+            border: none;
+            margin-top: 1em;
+            text-align: center;
+        }
+        p {
+            margin-top: 1em;
         }
     }
-  }
+    form {
+        @extend .col-sm-12;
+        background-color: $clouds;
+        color: $midnight-blue;
+        padding: 3em;
+        margin: 0 auto;
+        max-width: 50em;
+        border: none;
+        button {
+            box-shadow: none;
+            border: $green-light;
+        }
+        .form-group {
+            input {
+                text-align: center;
+            }
+            .form-control {
+                margin-top: 1em;
+                border: none;
+            }
+        }
+    }
+    h3 {
+        text-align: center;
+        color: $wet-blue;
+    }
+    form {
+        text-align: center;
+    }
 }
 
-[ui-view].ng-enter  {
-  -webkit-animation: enter_sequence .3s linear; /* Safari/Chrome */
+//---------SAVED PAGE---------
+.savedArticles {
+    h3 {
+        text-align: left;
+        color: $wet-blue;
+    }
+    .alert {
+        border: none;
+        color: $wet-blue;
+    }
+    .saved-panel {
+        .panel-heading {
+            background-color: $green-light;
+            .panel-title {
+                color: white;
+            }
+        }
+        .panel-body {
+            .saved-list {
+                .url-list {
+                    list-style: none;
+                    padding-bottom: 1ex;
+                    a {
+                        text-decoration: none;
+                        color: $green-light;
+                        font-size: 1.5em;
+                    }
+                    button {
+                        background-color: $white;
+                        border: none;
+                        float: right;
+                        i {
+                            font-size: 3ex;
+                            color: $silver;
+                        }
+                        i:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+.tracker {
+    border: 4px solid $green-light;
+    padding: 3em;
+}
+
+.time-span {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.time-span.ng-hide {
+    opacity: 0;
+}
+
+[ui-view].ng-enter {
+    -webkit-animation: enter_sequence .3s linear;
+    /* Safari/Chrome */
+}
+
 @-webkit-keyframes enter_sequence {
-  from { opacity:0; }
-  to { opacity:1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

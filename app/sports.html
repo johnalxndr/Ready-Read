@@ -1,0 +1,17 @@
+<div class="container-fluid title-list">
+    <button class="label label-info filter-button" ng-click="sports.orderByTime()">Longest</button>
+    <button class="label label-info filter-button" ng-click="sports.orderByTimeHigh()">Shortest</button>
+    <button class="label label-info filter-button" ng-click="sports.resetOrder()">Recent</button>
+    <ul class="list-group">
+        <li ng-repeat="article in sports.sportsNews">
+            <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="sports.authData" ng-click="sports.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span>
+            </a>
+            <h3 ng-show="preview" class="article-title text-center">{{article.collection1[0].title}}</h3>
+            <p ng-show="preview" ng-repeat="body in article.collection2">
+                <br>{{body.text.text}}</p>
+
+            <button ng-show="preview" class="btn btn-primary btn-sm" ng-show="sports.authData" ng-click="sports.markRead(article.wordcount)">Mark Read</button>
+            <button ng-show="preview" class="btn btn-primary btn-sm" ng-show="sports.authData" ng-click="sports.save(article.collection1[0].title,article.url)">Save Article</button>
+        </li>
+    </ul>
+</div>
