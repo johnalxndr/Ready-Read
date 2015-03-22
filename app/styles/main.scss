@@ -1,9 +1,10 @@
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/paper/bootstrap.css';
 $header-text:#444444;
-$green-light:#16a085;
-$green-dark: #16A085;
+$text:#666666;
 $main: #1ab188;
+$green-dark:#12826C;
+$green-light:#16a085;
 $midnight-blue:#2C3E50;
 $wet-blue:#34495e;
 $clouds:#ECF0F1;
@@ -32,7 +33,7 @@ h1 {
     .tag-line {
         color: $body-bg;
         margin-bottom: 3em;
-        font-size: 1em;
+        font-size: 1.5em;
     }
     span {
         color: $midnight-blue;
@@ -64,49 +65,88 @@ h1 {
 
 //---------Feed.Category-----------
 .cat-container {
-    margin: 0 auto;
+    text-align: center;
     a {
-        resize: none;
-        color: $green-dark;
+        list-style: none;
+        text-decoration: none;
         .cat-btn {
+              padding: 1em 2em 1em 2em;
+            margin-top: 2em;
             display: inline-block;
-            padding: 3em;
-            i {
-                font-size: 2em;
-                text-align: center;
-            }
+            text-align: center;
+            font-size: 3em;
+            text-align: center;
+            color: $green-light;
+        }
+        .cat-btn:hover {
+            background: $green-light;
+            color: $white;
         }
     }
-    a:hover {
-        color: #ffffff;
+    .tech {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
     }
-    h3 {
-        text-align: center;
+    .news {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
     }
-}
-
-.cat-btn:hover {
-    background-color: $green-dark;
+    .sports {
+        @extend .col-xs-12;
+        @extend .col-md-6;
+        @extend .col-lg-3;
+    }
+    .ent {
+        @extend .col-xs-12;
+        @extend .col-md-3;
+        @extend .col-lg-3;
+    }
 }
 
 //---------Feed.titles-------------
+.filter-button {
+    float: right;
+    background-color: $white;
+    color: $green-light;
+    border: none;
+    margin-left: 1ex;
+}
+
+.filter-button:hover {
+    color: $white;
+    background-color: $green-light;
+}
+
 .list-group {
+    margin-top: 2em;
     text-decoration: none;
     li {
         list-style: none;
         a {
             color: $header-text;
             padding: 1.5em;
-            font-size: 1em;
-            font-weight: 600;
+            font-size: 1.1em;
             span {
-                background-color: $white;
+                background-color: $clouds;
                 color: $green-light;
+            }
+            .save-label {
+                float: right;
+                margin-left: 3ex;
+            }
+            .save-label:hover {
+                background-color: $green-light;
+                color: $white;
             }
         }
         a:hover {
             color: $wet-blue;
             background-color: $clouds;
+            span {
+                border: $midnight-blue;
+            }
         }
         a.list-group-item:hover {}
         a.list-group-item:focus {
@@ -116,13 +156,24 @@ h1 {
         p {
             margin-top: 2em;
             font-size: 1.2em;
-            color: black;
+            color: $text;
             text-rendering: optimizeLegibility;
             font-weight: 400;
             line-height: 2em;
             max-width: 50em;
             margin: 0 auto;
             text-align: inherit;
+        }
+        button {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            background-color: $green-light;
+            color: $white;
+            border: none;
+            box-shadow: none;
+        }
+        button:hover {
+            background-color: $green-dark;
         }
     }
 }
@@ -186,14 +237,13 @@ h1 {
     }
     button {
         @extend .btn;
-        @extend .btn-default;
-        border-color: $green-light;
-        color: $midnight-blue;
+        color: $white;
         background-color: $green-light;
-        a:hover {
-            background-color: $midnight-blue;
-            color: $green-light;
-        }
+        border: none;
+    }
+    button:hover {
+        color: $white;
+        background-color: $green-dark;
     }
 }
 
@@ -203,82 +253,121 @@ h1 {
 
 .userInformation {
     .alert {
-        @extend .col-xs-12;
-        @extend .col-md-5;
-        @extend .col-md-offset-1;
+        @extend .col-sm-12;
+        margin-top: 1em;
+        border: none;
         text-align: center;
-        margin-top: 2em;
         button {
             @extend .btn;
             @extend .btn-danger;
-            box-shadow: 2px 2px 2px red;
+            border: none;
+            margin-top: 1em;
+            text-align: center;
+        }
+        p {
+            margin-top: 1em;
         }
     }
     form {
-        @extend .col-xs-12;
-        @extend .col-md-6;
+        @extend .col-sm-12;
+        background-color: $clouds;
+        color: $midnight-blue;
+        padding: 3em;
+        margin: 0 auto;
+        max-width: 50em;
+        border: none;
+        button {
+            box-shadow: none;
+            border: $green-light;
+        }
+        .form-group {
+            input {
+                text-align: center;
+            }
+            .form-control {
+                margin-top: 1em;
+                border: none;
+            }
+        }
     }
-    small {
-        @extend .col-xs-12;
-    }
-    h4 {
+    h3 {
         text-align: center;
+        color: $wet-blue;
     }
     form {
         text-align: center;
     }
 }
 
-.tracker {
-    h4 {
-        text-align: center;
-    }
-    small {
-        @extend .col-xs-12;
-        text-align: center;
-    }
-    p {
-        @extend .col-xs-12;
-        text-align: center;
-    }
-}
-
+//---------SAVED PAGE---------
 .savedArticles {
-    h4 {
-        text-align: center;
+    h3 {
+        text-align: left;
+        color: $wet-blue;
     }
-    ul {
-        @extend .list-group;
-        li {
-            @extend .col-xs-12;
-            @extend .list-group-item;
-            text-align: center;
-            background-color: $silver;
-            opacity: .7;
-            font-size: 1.3em;
-            color: $midnight-blue;
-            border: solid $green-light;
-            margin-top: 1em;
-            &:hover {
-                opacity: 1;
-                border-color: $midnight-blue;
-                box-shadow: 5px 5px 5px $green-dark;
+    .alert {
+        border: none;
+        color: $wet-blue;
+    }
+    .saved-panel {
+        .panel-heading {
+            background-color: $green-light;
+            .panel-title {
+                color: white;
+            }
+        }
+        .panel-body {
+            .saved-list {
+                .url-list {
+                    list-style: none;
+                    padding-bottom: 1ex;
+                    a {
+                        text-decoration: none;
+                        color: $green-light;
+                        font-size: 1.5em;
+                    }
+                    button {
+                        background-color: $white;
+                        border: none;
+                        float: right;
+                        i {
+                            font-size: 3ex;
+                            color: $silver;
+                        }
+                        i:hover {
+                            color: red;
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+.tracker {
+    border: 4px solid $green-light;
+    padding: 3em;
+}
+
 .time-span {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
 }
 
 .time-span.ng-hide {
-  opacity:0;
+    opacity: 0;
 }
-[ui-view].ng-enter  {
-  -webkit-animation: enter_sequence .3s linear; /* Safari/Chrome */
+
+[ui-view].ng-enter {
+    -webkit-animation: enter_sequence .3s linear;
+    /* Safari/Chrome */
 }
+
 @-webkit-keyframes enter_sequence {
-  from { opacity:0; }
-  to { opacity:1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

@@ -1,7 +1,16 @@
 readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$firebaseArray){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com')
-
+  this.order = ''
+  this.orderByTime = function(){
+    this.order = 'wordcount'
+  }
+  this.orderByTimeHigh = function(){
+    this.order = '-wordcount'
+  }
+  this.resetOrder = function(){
+    this.order = ''
+  }
   this.getAuth = $firebaseAuth(base)
   this.getAuth.$onAuth(function (authData) {
       self.authData = authData
@@ -10,6 +19,9 @@ readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$f
     self.techNews = data.results;
     console.log(data.results)
   })
+  this.test = function(){
+    console.log('saved')
+  }
   this.markRead = angularAuth.markAsRead
   this.save = angularAuth.saveArticle
 })
