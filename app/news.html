@@ -1,9 +1,9 @@
 <div class="container-fluid title-list">
-    <button class="label label-info filter-button" ng-click="news.orderByTime()">Longest</button>
-    <button class="label label-info filter-button" ng-click="news.orderByTimeHigh()">Shortest</button>
+    <button class="label label-info filter-button" ng-click="news.orderByTimeHigh()">Longest</button>
+    <button class="label label-info filter-button" ng-click="news.orderByTime()">Shortest</button>
     <button class="label label-info filter-button" ng-click="news.resetOrder()">Recent</button>
     <ul class="list-group">
-        <li ng-repeat="article in news.newsNews">
+        <li ng-repeat="article in news.newsNews | orderBy: news.order">
             <a href="#" class="list-group-item" ng-click="preview=!preview">{{article.collection1[0].title}}<span ng-show="news.authData" ng-click="news.save(article.collection1[0].title,article.url);$event.stopPropagation()" class="save-label label label-info">save</span><span class="badge">{{article.wordcount/190 | number:0}} min</span>
             </a>
             <h3 ng-show="preview" class="article-title text-center">{{article.collection1[0].title}}</h3>

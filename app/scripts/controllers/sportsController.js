@@ -1,4 +1,8 @@
-readyRead.controller('SportsController', function(api,angularAuth,$firebaseAuth){
+'use strict';
+
+angular.module('readyRead')
+
+.controller('SportsController', function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';
@@ -17,7 +21,7 @@ readyRead.controller('SportsController', function(api,angularAuth,$firebaseAuth)
   });
   api.sports.then(function(data){
     self.sportsNews = data.results;
-  })
+  });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
-})
+});
