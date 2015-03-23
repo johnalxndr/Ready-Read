@@ -1,27 +1,27 @@
-readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$firebaseArray){
+'use strict';
+
+angular.module('readyRead')
+
+.controller('TechController',['api','$firebaseAuth','angularAuth', function(api,$firebaseAuth,angularAuth){
   var self = this;
-  var base = new Firebase('https://readyread.firebaseio.com')
-  this.order = ''
+  var base = new Firebase('https://readyread.firebaseio.com');
+  this.order = '';
   this.orderByTime = function(){
-    this.order = 'wordcount'
-  }
+    this.order = 'wordcount';
+  };
   this.orderByTimeHigh = function(){
-    this.order = '-wordcount'
-  }
+    this.order = '-wordcount';
+  };
   this.resetOrder = function(){
-    this.order = ''
-  }
-  this.getAuth = $firebaseAuth(base)
+    this.order = '';
+  };
+  this.getAuth = $firebaseAuth(base);
   this.getAuth.$onAuth(function (authData) {
-      self.authData = authData
-  })
+      self.authData = authData;
+  });
   api.tech.then(function(data){
     self.techNews = data.results;
-    console.log(data.results)
-  })
-  this.test = function(){
-    console.log('saved')
-  }
-  this.markRead = angularAuth.markAsRead
-  this.save = angularAuth.saveArticle
-})
+  });
+  this.markRead = angularAuth.markAsRead;
+  this.save = angularAuth.saveArticle;
+}]);

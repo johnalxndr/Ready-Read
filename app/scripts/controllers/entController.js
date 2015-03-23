@@ -1,9 +1,13 @@
-readyRead.controller('EntController', function(api,angularAuth,$firebaseAuth){
+'use strict';
+
+angular.module('readyRead')
+
+.controller('EntController', ['api','angularAuth','$firebaseAuth',function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';
   this.orderByTime = function(){
-    this.order = 'wordcount'
+    this.order = 'wordcount';
   };
   this.orderByTimeHigh = function(){
     this.order = '-wordcount';
@@ -20,4 +24,4 @@ readyRead.controller('EntController', function(api,angularAuth,$firebaseAuth){
   });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
-})
+}]);

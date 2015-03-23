@@ -1,6 +1,9 @@
-readyRead.config(function ($stateProvider, $urlRouterProvider) {
+'use strict';
 
-    $urlRouterProvider.otherwise('login')
+angular.module('readyRead')
+
+.config(['$stateProvider','$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('login');
     $stateProvider
         .state('login', {
             url: '/login',
@@ -51,5 +54,5 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             url: '/userProfileInformation',
             templateUrl: '../userProfile.information.html',
             controller: 'UserProfileController as user'
-        })
-})
+        });
+}]);
