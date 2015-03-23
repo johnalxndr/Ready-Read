@@ -1,6 +1,6 @@
 <div class="container-fluid title-list">
-    <button class="label label-info filter-button" ng-click="tech.orderByTime()">Longest</button>
-    <button class="label label-info filter-button" ng-click="tech.orderByTimeHigh()">Shortest</button>
+    <button class="label label-info filter-button" ng-click="tech.orderByTimeHigh()">Longest</button>
+    <button class="label label-info filter-button" ng-click="tech.orderByTime()">Shortest</button>
     <button class="label label-info filter-button" ng-click="tech.resetOrder()">Recent</button>
     <ul class="list-group">
         <li ng-repeat="article in tech.techNews | orderBy: tech.order">
