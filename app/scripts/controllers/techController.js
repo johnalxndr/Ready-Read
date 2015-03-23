@@ -1,4 +1,8 @@
-readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$firebaseArray){
+'use strict'
+
+angular.module('readyRead')
+
+.controller('TechController', function(api,$firebaseAuth,angularAuth,$firebaseArray){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';

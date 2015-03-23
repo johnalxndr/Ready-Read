@@ -1,4 +1,8 @@
-readyRead.controller('MainController', function (angularAuth, $firebaseAuth) {
+'use strict'
+
+angular.module('readyRead')
+
+.controller('MainController', function (angularAuth, $firebaseAuth) {
     var base = new Firebase('https://readyread.firebaseio.com');
     var self = this;
     this.isCollapsed = true;

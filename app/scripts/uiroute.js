@@ -1,4 +1,8 @@
-readyRead.config(function ($stateProvider, $urlRouterProvider) {
+'use strict'
+
+angular.module('readyRead')
+
+.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('login');
     $stateProvider
         .state('login', {

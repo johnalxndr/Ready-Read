@@ -1,4 +1,8 @@
-readyRead.controller('NewsController', function(api,angularAuth,$firebaseAuth){
+'use strict'
+
+angular.module('readyRead')
+
+.controller('NewsController', function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';

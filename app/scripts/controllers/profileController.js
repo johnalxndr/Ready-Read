@@ -1,4 +1,8 @@
-readyRead.controller('UserProfileController', function(angularAuth,$firebaseObject,$firebaseArray,$timeout){
+'use strict'
+
+angular.module('readyRead')
+
+.controller('UserProfileController', function(angularAuth,$firebaseObject,$firebaseArray,$timeout){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com/users/');
   var userBase = $firebaseObject(base.child(base.getAuth().uid));

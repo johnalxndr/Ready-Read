@@ -1,4 +1,8 @@
-readyRead.factory('api', function (Restangular) {
+'use strict'
+
+angular.module('readyRead')
+
+.factory('api', function (Restangular) {
     return {
         tech: Restangular.one('bxsp64vm').get(),
         news: Restangular.one('e4ks0wxo').get(),
