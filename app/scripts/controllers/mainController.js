@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.controller('MainController', function (angularAuth, $firebaseAuth) {
+.controller('MainController',['angularAuth','$firebaseAuth', function (angularAuth, $firebaseAuth) {
     var base = new Firebase('https://readyread.firebaseio.com');
     var self = this;
     this.isCollapsed = true;
@@ -12,4 +12,4 @@ angular.module('readyRead')
     this.getAuth.$onAuth(function (authData) {
         self.authData = authData;
     });
-});
+}]);

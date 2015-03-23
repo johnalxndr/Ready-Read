@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $firebaseObject, $state) {
+.factory('angularAuth',['$firebaseArray','$firebaseAuth','$firebaseObject','$state', function ($firebaseArray, $firebaseAuth, $firebaseObject, $state) {
     var base = new Firebase('https://readyread.firebaseio.com/');
     var userBase = new Firebase('https://readyread.firebaseio.com/users/');
     var userArticles = new Firebase('https://readyread.firebaseio.com/articles/');
@@ -52,4 +52,4 @@ angular.module('readyRead')
           });
         }
     };
-});
+}]);

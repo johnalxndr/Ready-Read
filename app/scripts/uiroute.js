@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider','$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('login');
     $stateProvider
         .state('login', {
@@ -55,4 +55,4 @@ angular.module('readyRead')
             templateUrl: '../userProfile.information.html',
             controller: 'UserProfileController as user'
         });
-});
+}]);

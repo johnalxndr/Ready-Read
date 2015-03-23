@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.controller('SportsController', function(api,angularAuth,$firebaseAuth){
+.controller('SportsController',['api','angularAuth','$firebaseAuth', function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';
@@ -24,4 +24,4 @@ angular.module('readyRead')
   });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
-});
+}]);

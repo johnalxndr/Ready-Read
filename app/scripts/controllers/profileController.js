@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.controller('UserProfileController', function(angularAuth,$firebaseObject,$firebaseArray,$timeout){
+.controller('UserProfileController',['angularAuth','$firebaseObject','$firebaseArray','$timeout', function(angularAuth,$firebaseObject,$firebaseArray,$timeout){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com/users/');
   var userBase = $firebaseObject(base.child(base.getAuth().uid));
@@ -55,4 +55,4 @@ angular.module('readyRead')
   this.removeSavedArticle = function(article){
     userHistory.$remove(article);
   };
-});
+}]);
