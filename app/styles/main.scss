@@ -78,29 +78,24 @@ h1 {
             color: $green-light;
         }
         .cat-btn:hover {
-            background: $green-light;
-            color: $white;
+            color: $midnight-blue;
         }
     }
     .tech {
         @extend .col-xs-12;
         @extend .col-md-6;
-        @extend .col-lg-3;
     }
     .news {
         @extend .col-xs-12;
         @extend .col-md-6;
-        @extend .col-lg-3;
     }
     .sports {
         @extend .col-xs-12;
         @extend .col-md-6;
-        @extend .col-lg-3;
     }
     .ent {
         @extend .col-xs-12;
         @extend .col-md-3;
-        @extend .col-lg-3;
     }
 }
 
@@ -217,7 +212,7 @@ h1 {
             }
             a:hover {
                 color: $white;
-                background-color: $green-dark;
+                background-color: $green-light;
             }
         }
     }
