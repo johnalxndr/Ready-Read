@@ -49,4 +49,4 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
           });
         }
       };
-})
+});

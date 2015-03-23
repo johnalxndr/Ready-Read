@@ -1,4 +1,3 @@
-'use strict';
 readyRead.controller('FeedController', function (api, angularAuth, $firebaseObject, $firebaseAuth) {
     var self = this;
     var base = new Firebase('https://readyread.firebaseio.com/users/');
@@ -6,4 +5,4 @@ readyRead.controller('FeedController', function (api, angularAuth, $firebaseObje
     this.getAuth.$onAuth(function (authData) {
         self.authData = authData;
     });
-})
+});

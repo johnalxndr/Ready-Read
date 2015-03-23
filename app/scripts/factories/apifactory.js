@@ -5,4 +5,4 @@ readyRead.factory('api', function (Restangular) {
         sports: Restangular.one('ei42ckfu').get(),
         ent: Restangular.one('7hecsq1u').get()
       };
-})
+});

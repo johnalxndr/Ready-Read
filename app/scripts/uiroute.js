@@ -1,4 +1,3 @@
-'use strict';
 readyRead.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('login');
     $stateProvider
@@ -53,4 +52,4 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '../userProfile.information.html',
             controller: 'UserProfileController as user'
         });
-})
+});

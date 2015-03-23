@@ -1,4 +1,3 @@
-'use strict';
 readyRead.controller('NewsController', function(api,angularAuth,$firebaseAuth){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
@@ -21,4 +20,4 @@ readyRead.controller('NewsController', function(api,angularAuth,$firebaseAuth){
   });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
-})
+});

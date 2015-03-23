@@ -1,4 +1,3 @@
-'use strict';
 readyRead.controller('MainController', function (angularAuth, $firebaseAuth) {
     var base = new Firebase('https://readyread.firebaseio.com');
     var self = this;
@@ -9,4 +8,4 @@ readyRead.controller('MainController', function (angularAuth, $firebaseAuth) {
     this.getAuth.$onAuth(function (authData) {
         self.authData = authData;
     });
-})
+});

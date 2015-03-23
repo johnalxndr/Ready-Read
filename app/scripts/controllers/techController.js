@@ -1,4 +1,3 @@
-'use strict';
 readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$firebaseArray){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
@@ -21,4 +20,4 @@ readyRead.controller('TechController', function(api,$firebaseAuth,angularAuth,$f
   });
   this.markRead = angularAuth.markAsRead;
   this.save = angularAuth.saveArticle;
-})
+});

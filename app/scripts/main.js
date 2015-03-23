@@ -1,5 +1,5 @@
 'use strict';
-var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular', 'firebase', 'ui.router'])
+var readyRead = angular.module('readyRead', ['ngAnimate', 'restangular', 'firebase', 'ui.router']);
 readyRead.config(function (RestangularProvider) {
     RestangularProvider.setBaseUrl('https://www.kimonolabs.com/api/');
     RestangularProvider.setDefaultRequestParams({
@@ -7,4 +7,4 @@ readyRead.config(function (RestangularProvider) {
       kimbypage: 1,
       kimmodify: 1
     });
-})
+});
