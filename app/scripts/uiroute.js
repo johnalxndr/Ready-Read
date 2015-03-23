@@ -16,7 +16,6 @@ readyRead.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '../news.html',
             controller: 'NewsController as news'
         })
-
         .state('sports', {
             url: '/sports',
             templateUrl: '../sports.html',
