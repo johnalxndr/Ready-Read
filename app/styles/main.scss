@@ -9,7 +9,6 @@ $midnight-blue:#2C3E50;
 $wet-blue:#34495e;
 $clouds:#ECF0F1;
 $silver:#BDC3C7;
-$concrete:#95A5A6;
 $white: #ffffff;
 $thin: 300;
 $normal: 400;
@@ -70,7 +69,7 @@ h1 {
         list-style: none;
         text-decoration: none;
         .cat-btn {
-              padding: 1em 2em 1em 2em;
+            padding: 1em 2em 1em 2em;
             margin-top: 2em;
             display: inline-block;
             text-align: center;
@@ -270,11 +269,13 @@ h1 {
     }
     form {
         @extend .col-sm-12;
+        @extend .col-md-12;
+        @extend .col-xlg-12;
         background-color: $clouds;
         color: $midnight-blue;
         padding: 3em;
         margin: 0 auto;
-        max-width: 50em;
+        max-width: 100%;
         border: none;
         button {
             box-shadow: none;
