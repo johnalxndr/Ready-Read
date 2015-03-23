@@ -51,5 +51,5 @@ angular.module('readyRead')
             url: url
           });
         }
-    }
+    };
 });
