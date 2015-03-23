@@ -24,7 +24,6 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
                 base.child('users').child(authData.uid).update({
                     name: authData.twitter.username,
                     displayName: authData.twitter.displayName,
-                    picture: authData.twitter.cachedUserProfile.profile_image_url,
                     isMember: true
                 });
             }
@@ -48,5 +47,5 @@ readyRead.factory('angularAuth', function ($firebaseArray, $firebaseAuth, $fireb
             url: url
           });
         }
-      };
+    }
 });
