@@ -50,12 +50,15 @@ h1 {
     button {
         margin-top: 1em;
         margin-bottom: 3em;
+        box-shadow: none;
     }
     button:hover {
         color: aliceblue;
     }
     a {
         text-decoration: none;
+        box-shadow: none;
+        border: none;
     }
     a:hover {
         color: $white;
@@ -68,13 +71,12 @@ h1 {
     a {
         list-style: none;
         text-decoration: none;
+        text-align: center;
         .cat-btn {
-            padding: 1em 2em 1em 2em;
-            margin-top: 2em;
+            margin-top: 1em;
             display: inline-block;
             text-align: center;
             font-size: 3em;
-            text-align: center;
             color: $green-light;
         }
         .cat-btn:hover {
@@ -82,19 +84,19 @@ h1 {
         }
     }
     .tech {
-        @extend .col-xs-12;
-        @extend .col-md-6;
+        @extend .col-xs-6;
+        @extend .col-md-3;
     }
     .news {
-        @extend .col-xs-12;
-        @extend .col-md-6;
+        @extend .col-xs-6;
+        @extend .col-md-3;
     }
     .sports {
-        @extend .col-xs-12;
-        @extend .col-md-6;
+        @extend .col-xs-6;
+        @extend .col-md-3;
     }
     .ent {
-        @extend .col-xs-12;
+        @extend .col-xs-6;
         @extend .col-md-3;
     }
 }
@@ -116,6 +118,7 @@ h1 {
 .list-group {
     margin-top: 2em;
     text-decoration: none;
+    cursor: pointer;
     li {
         list-style: none;
         a {
@@ -129,6 +132,7 @@ h1 {
             .save-label {
                 float: right;
                 margin-left: 3ex;
+                cursor: pointer;
             }
             .save-label:hover {
                 background-color: $green-light;
@@ -223,6 +227,7 @@ h1 {
     h2 {
         text-align: center;
         color: $green-light;
+        padding: 1em;
     }
     nav {
         @extend .col-xs-12;
@@ -234,6 +239,9 @@ h1 {
         color: $white;
         background-color: $green-light;
         border: none;
+        padding: 1em;
+        width: 8em;
+        font-size: 1em;
     }
     button:hover {
         color: $white;
