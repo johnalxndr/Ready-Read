@@ -10,7 +10,7 @@
             <p ng-show="preview" ng-repeat="body in article.collection2">
                 <br>{{body.text.text}}</p>
 
-            <button ng-show="preview" class="btn btn-primary btn-sm" ng-show="news.authData" ng-click="news.markRead(article.wordcount)">Mark Read</button>
+            <button ng-show="preview" class="btn btn-primary btn-sm" ng-click="news.markRead(article.wordcount)">Mark Read</button>
             <button ng-show="preview" class="btn btn-primary btn-sm" ng-show="news.authData" ng-click="news.save(article.collection1[0].title,article.url)">Save Article</button>
         </li>
     </ul>
