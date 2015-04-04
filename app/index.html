@@ -43,6 +43,8 @@
                     </li>
                     <li ng-show="main.authData"><a ui-sref="userProfile">Profile</a>
                     </li>
+                    <li><a href="#" ng-click="showStopWatch=!showStopWatch">Watch</a>
+                    </li>
                 </ul>
                 <ul ng-click="isCollapsed=!isCollapsed" class="nav navbar-nav navbar-right">
                     <li ng-click="main.logout()" ng-show="main.authData"><a ui-sref="login">Logout</a>
@@ -51,8 +53,16 @@
             </div>
         </div>
     </nav>
-
-    <div ui-view></div>
+    <div class="stopWatch" style="border:solid black" ng-show="showStopWatch">
+    <p><span ng-show="main.currentMins > 0">{{main.currentMins}}:</span>{{main.currentTime}}</p>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default" ng-click="main.startTimer()"><i class="fa fa-play"></i></button>
+      <button class="btn btn-default" ng-click="main.stopTimer()"><i class="fa fa-pause"></i></button>
+      <button class="btn btn-default" ng-click="main.resetTimer()"><i class="fa fa-trash-o"></i></button>
+      <button class="btn btn-default" ng-click="showStopWatch = false"><i class="fa fa-eye-slash"></i></button>
+    </div>
+  </div>
+  <div ui-view></div>
 
 
     <!--[if lt IE 10]>

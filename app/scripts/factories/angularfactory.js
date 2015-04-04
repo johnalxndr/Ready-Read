@@ -50,6 +50,6 @@ angular.module('readyRead')
             title: title,
             url: url
           });
-        }
+        },
     };
 }]);

@@ -20,7 +20,8 @@ angular.module('readyRead')
     if(data.timeRead === undefined){
       base.child(data.$id).update({
         wordsRead: 0,
-        timeRead: 0
+        timeRead: 0,
+        readSpeed: 190
       });
     }
   });
@@ -55,4 +56,10 @@ angular.module('readyRead')
   this.removeSavedArticle = function(article){
     userHistory.$remove(article);
   };
+  this.speedUpdate = function(){
+    base.child(base.getAuth().uid).update({
+      readSpeed: Number(this.newData.speedGoal)
+    });
+    this.newData = '';
+  }
 }]);

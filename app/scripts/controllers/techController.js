@@ -2,7 +2,7 @@
 
 angular.module('readyRead')
 
-.controller('TechController',['api','$firebaseAuth','angularAuth', function(api,$firebaseAuth,angularAuth){
+.controller('TechController',['api','$firebaseAuth','angularAuth','$firebaseObject', function(api,$firebaseAuth,angularAuth,$firebaseObject){
   var self = this;
   var base = new Firebase('https://readyread.firebaseio.com');
   this.order = '';

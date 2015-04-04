@@ -371,6 +371,21 @@ h1 {
 .time-span.ng-hide {
     opacity: 0;
 }
+//StopWatch
+.stopWatch{
+  right: 0;
+  bottom: 0;
+  text-align:center;
+  position: fixed;
+  z-index: 1000;
+  padding: 0;
+  p{
+    color: $green-light;
+    font-weight: bold;
+    font-size: 1.3em;
+    background-color: rgba(44,62,80,.8);
+  }
+}
 
 [ui-view].ng-enter {
     -webkit-animation: enter_sequence .3s linear;
