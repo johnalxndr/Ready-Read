@@ -376,7 +376,7 @@ h1 {
 .time-span.ng-hide {
     opacity: 0;
 }
-//StopWatch
+//=================StopWatch==============
 .stopWatch{
   right: 0;
   bottom: 0;
@@ -385,7 +385,8 @@ h1 {
   z-index: 1000;
   padding: 0;
   p{
-    color: $green-light;
+    border-radius: 2em;
+    color:white;
     font-weight: bold;
     font-size: 1.3em;
     background-color: rgba(44,62,80,.8);

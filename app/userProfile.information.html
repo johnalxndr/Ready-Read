@@ -13,10 +13,6 @@
             </div>
             <button type="submit" class="btn btn-default update-goal">Update Goal!</button>
         </form>
-        <form ng-submit="user.speedUpdate()">
-          <input type="number" ng-model="user.newData.speedGoal">
-          <button type="submit" class="btn btn-default update-goal">Set Your WPM</button>
-        </form>
         <div class="alert alert-danger" role="alert">
             <p>
                 <span ng-show="user.showTimeMessage" style="display: block" class="time-span">Your Time has been reset</span>
